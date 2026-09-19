@@ -1,0 +1,3144 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #020b14;
+}
+
+body {
+  background: #020b14;
+  color: #f4f7f8;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* =========================
+   MAIN APP
+========================= */
+
+.app {
+  font-size: 14px;
+  min-height: 100vh;
+  position: relative;
+  background: #020b14;
+}
+
+.ocean-background {
+  position: fixed;
+  inset: 0;
+  font-size: 10px;
+  pointer-events: auto;
+}
+  
+.dashboard-section {
+  position: relative;
+    font-size: 2.5rem;
+  min-height: 100vh;
+  pointer-events: none;
+}
+
+.dashboard-section .topbar {
+  position: absolute;
+  pointer-events: none;
+}
+
+.dashboard-section .time-controls,
+.dashboard-section .map-label {
+  position: absolute;
+}
+
+.dashboard-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  pointer-events: none;
+  animation: scrollCuePulse 2.8s ease-in-out infinite;
+}
+
+.dashboard-scroll-cue span {
+  color: #55e6a5;
+  font-size: 14px;
+  animation: scrollCueArrow 2.8s ease-in-out infinite;
+}
+
+@keyframes scrollCuePulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes scrollCueArrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* =========================
+   HUD
+========================= */
+
+.hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+  position: absolute;
+  top: 28px;
+  left: 34px;
+  right: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.brand h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.brand span {
+  display: block;
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  background: rgba(2, 11, 20, 0.55);
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.status-dot,
+.signal-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #55e6a5;
+  box-shadow: 0 0 12px rgba(85, 230, 165, 0.7);
+}
+
+/* =========================
+   GLASS
+========================= */
+
+.glass {
+  background: rgba(3, 15, 25, 0.66);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    inset 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* =========================
+   LEFT PANEL
+========================= */
+
+.left-panel {
+  position: absolute;
+  top: 105px;
+  left: 34px;
+  width: 315px;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.eyebrow {
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.left-panel h2 {
+  margin: 13px 0 13px;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1.05;
+  letter-spacing: -1.4px;
+  font-weight: 500;
+}
+
+.left-panel h2 span {
+  color: #ff786d;
+}
+
+.description {
+  margin: 0 0 27px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* =========================
+   METRICS
+========================= */
+
+.metric {
+  margin-top: 20px;
+}
+
+.metric > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metric span {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.metric strong {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.metric-line {
+  width: 100%;
+  height: 2px;
+  margin-top: 9px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+}
+
+.metric-fill {
+  width: 78%;
+  height: 100%;
+  border-radius: 5px;
+  background: #ff786d;
+}
+
+.metric-fill.wind {
+  width: 53%;
+}
+
+.metric-fill.visibility {
+  width: 86%;
+}
+
+/* =========================
+   RIGHT PANEL
+========================= */
+
+.right-panel {
+  position: absolute;
+  top: 105px;
+  right: 34px;
+  width: 285px;
+  padding: 22px;
+  border-radius: 20px;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.panel-heading h3 {
+  margin: 7px 0 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.risk-badge {
+  padding: 6px 9px;
+  border: 1px solid rgba(255, 120, 109, 0.3);
+  border-radius: 20px;
+  color: #ff786d;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   RISK SCORE
+========================= */
+
+.risk-score {
+  margin-top: 27px;
+  text-align: center;
+}
+
+.score {
+  color: #ffffff;
+  font-size: 55px;
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: -3px;
+}
+
+.score small {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+.score-label {
+  margin-top: 7px;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   PREDICTION
+========================= */
+
+.prediction {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 13px;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.prediction-icon {
+  color: #ff786d;
+  font-size: 20px;
+}
+
+.prediction strong {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.prediction p {
+  margin: 5px 0 0;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* =========================
+   FORECAST
+========================= */
+
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 19px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.forecast div {
+  text-align: center;
+}
+
+.forecast span {
+  display: block;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.forecast strong {
+  display: block;
+  margin-top: 5px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* =========================
+   BOTTOM PANELS
+========================= */
+
+.mini-panel {
+  position: absolute;
+  bottom: 30px;
+  width: 235px;
+  padding: 17px;
+  border-radius: 15px;
+}
+
+.bottom-left {
+  left: 34px;
+}
+
+.bottom-right {
+  right: 34px;
+}
+
+.mini-title {
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 8px;
+  letter-spacing: 1.7px;
+}
+
+.vessel-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vessel-icon {
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(255, 120, 109, 0.1);
+  color: #ff786d;
+}
+
+.vessel-info strong {
+  display: block;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.vessel-info span:last-child {
+  display: block;
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 8px;
+}
+
+.coordinates {
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   OCEAN SIGNALS
+========================= */
+
+.signal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 9px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 9px;
+}
+
+.signal-dot.warning {
+  background: #ff786d;
+  box-shadow: 0 0 12px rgba(255, 120, 109, 0.7);
+}
+
+/* =========================
+   TIME CONTROLS
+========================= */
+
+.time-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 78px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 12px;
+  pointer-events: auto;
+}
+
+.time-button {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.38);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.time-button:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.time-button.active {
+  background: rgba(255, 120, 109, 0.16);
+  color: #ff786d;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 120, 109, 0.2);
+}
+
+.time-button:active {
+  transform: scale(0.96);
+}
+
+/* =========================
+   CENTER LABEL
+========================= */
+
+.map-label {
+  position: absolute;
+  left: 50%;
+  bottom: 31px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 30px;
+  background: rgba(2, 11, 20, 0.5);
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.pulse {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #55e6a5;
+  box-shadow:
+    0 0 0 4px rgba(85, 230, 165, 0.08),
+    0 0 12px rgba(85, 230, 165, 0.8);
+}
+
+/* =========================
+   VESSEL CARD
+========================= */
+
+.vessel-card-button {
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.vessel-card-button:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 120, 109, 0.35);
+  background: rgba(8, 24, 36, 0.8);
+}
+
+.click-hint {
+  margin-top: 11px;
+  color: #ff786d;
+  font-size: 7px;
+  letter-spacing: 1.2px;
+  opacity: 0.7;
+}
+
+/* =========================
+   VESSEL OVERLAY
+========================= */
+
+.vessel-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 5, 10, 0.42);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  pointer-events: auto;
+  z-index: 50;
+}
+
+/* =========================
+   VESSEL MODAL
+========================= */
+
+.vessel-modal {
+  position: relative;
+  width: 390px;
+  padding: 28px;
+  border-radius: 22px;
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.55),
+    inset 0 1px rgba(255, 255, 255, 0.05);
+  animation: vesselAppear 0.25s ease-out;
+}
+
+@keyframes vesselAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.vessel-modal h2 {
+  margin: 10px 0 6px;
+  color: #ffffff;
+  font-size: 27px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.vessel-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 8px;
+  letter-spacing: 1.4px;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-vessel {
+  position: absolute;
+  top: 17px;
+  right: 18px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 19px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.close-vessel:hover {
+  background: rgba(255, 120, 109, 0.12);
+  color: #ff786d;
+}
+
+/* =========================
+   VESSEL DETAILS
+========================= */
+
+.vessel-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.vessel-detail {
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.vessel-detail span {
+  display: block;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 7px;
+  letter-spacing: 1.3px;
+}
+
+.vessel-detail strong {
+  display: block;
+  margin-top: 7px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.vessel-detail .risk-text {
+  color: #ff786d;
+}
+
+/* =========================
+   ROUTE BOX
+========================= */
+
+.route-box {
+  margin-top: 13px;
+  padding: 15px;
+  border-radius: 13px;
+  background: rgba(255, 120, 109, 0.055);
+  border: 1px solid rgba(255, 120, 109, 0.12);
+}
+
+.route-box span {
+  color: rgba(255, 120, 109, 0.75);
+  font-size: 7px;
+  letter-spacing: 1.5px;
+}
+
+.route-box p {
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.43);
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+/* =========================
+   MODAL CLOSE
+========================= */
+
+.close-button {
+  width: 100%;
+  margin-top: 17px;
+  padding: 11px;
+  border: 1px solid rgba(255, 120, 109, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 120, 109, 0.1);
+  color: #ff786d;
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 120, 109, 0.17);
+}
+
+.close-button:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   LIVE DATA TELEMETRY
+========================= */
+
+.live-data-panel {
+  position: absolute;
+  right: 24px;
+  bottom: 78px;
+  width: 190px;
+  padding: 14px;
+  border: 1px solid rgba(67, 217, 221, 0.16);
+  border-radius: 12px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(5, 20, 31, 0.88),
+      rgba(2, 11, 20, 0.72)
+    );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.28),
+    inset 0 0 25px rgba(67, 217, 221, 0.025);
+  pointer-events: none;
+  z-index: 12;
+}
+
+.live-data-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #43d9dd;
+  box-shadow: 0 0 8px rgba(67, 217, 221, 0.9);
+  animation: livePulse 1.6s infinite;
+}
+
+.live-data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.live-data-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.live-data-item span {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+
+.live-data-item strong {
+  color: #f4f7f8;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+.live-data-item:last-child {
+  grid-column: span 2;
+  border-color: rgba(255, 120, 109, 0.16);
+}
+
+.live-data-item:last-child strong {
+  color: #ff786d;
+}
+
+@keyframes livePulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.35;
+    transform: scale(0.75);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   AI ACTIVITY
+========================= */
+
+.ai-activity-panel {
+  position: absolute;
+  left: 285px;
+  bottom: 78px;
+  width: 235px;
+  padding: 14px;
+  border: 1px solid rgba(67, 217, 221, 0.14);
+  border-radius: 12px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(5, 20, 31, 0.88),
+      rgba(2, 11, 20, 0.72)
+    );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.28),
+    inset 0 0 25px rgba(67, 217, 221, 0.025);
+  pointer-events: none;
+  z-index: 12;
+}
+
+.ai-activity-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+}
+
+.activity-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #43d9dd;
+  box-shadow: 0 0 8px rgba(67, 217, 221, 0.9);
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 10px;
+}
+
+.activity-line {
+  width: 5px;
+  height: 5px;
+  flex-shrink: 0;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: #43d9dd;
+  box-shadow: 0 0 7px rgba(67, 217, 221, 0.65);
+}
+
+.activity-line.warning {
+  background: #ff786d;
+  box-shadow: 0 0 7px rgba(255, 120, 109, 0.7);
+}
+
+.activity-item strong {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+
+.activity-item p {
+  margin: 4px 0 0;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .left-panel {
+    width: 280px;
+  }
+
+  .right-panel {
+    width: 260px;
+  }
+}
+
+@media (max-width: 800px) {
+  .left-panel {
+    width: 260px;
+  }
+
+  .right-panel {
+    width: 240px;
+  }
+
+  .mini-panel {
+    display: none;
+  }
+
+  .ai-activity-panel {
+    left: 20px;
+  }
+
+  .live-data-panel {
+    right: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+  }
+
+  .left-panel {
+    top: 80px;
+    left: 15px;
+    width: calc(100% - 30px);
+  }
+
+  .right-panel {
+    display: none;
+  }
+
+  .brand span {
+    display: none;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand h1 {
+    font-size: 15px;
+  }
+
+  .system-status {
+    padding: 7px 10px;
+    font-size: 8px;
+  }
+
+  .time-controls {
+    bottom: 65px;
+  }
+
+  .time-button {
+    padding: 7px 10px;
+  }
+
+  .map-label {
+    bottom: 20px;
+  }
+
+  .live-data-panel {
+    display: none;
+  }
+
+  .ai-activity-panel {
+    display: none;
+  }
+
+  .vessel-modal {
+    width: calc(100% - 30px);
+    padding: 23px;
+  }
+}
+/* =========================
+   LOADING SCREEN
+========================= */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(8, 124, 145, 0.12),
+      transparent 45%
+    ),
+    #020b14;
+}
+
+.loading-content {
+  width: 280px;
+  text-align: center;
+}
+
+.loading-logo {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(67, 217, 221, 0.35);
+  border-radius: 16px;
+
+  background: rgba(67, 217, 221, 0.06);
+
+  color: #43d9dd;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  box-shadow:
+    0 0 30px rgba(67, 217, 221, 0.08),
+    inset 0 0 20px rgba(67, 217, 221, 0.04);
+
+  animation: logoPulse 1.8s ease-in-out infinite;
+}
+
+.loading-content h2 {
+  margin: 0;
+
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.loading-content p {
+  margin: 7px 0 25px;
+
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+.loading-bar {
+  width: 100%;
+  height: 2px;
+
+  overflow: hidden;
+  border-radius: 5px;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.loading-progress {
+  width: 0;
+  height: 100%;
+
+  background: #43d9dd;
+
+  box-shadow: 0 0 12px rgba(67, 217, 221, 0.8);
+
+  animation: loadingProgress 1.8s ease-out forwards;
+}
+
+.loading-content > span {
+  display: block;
+
+  margin-top: 12px;
+
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 7px;
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================
+   LOADING ANIMATIONS
+========================= */
+
+@keyframes loadingProgress {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes logoPulse {
+  0%,
+  100% {
+    transform: scale(1);
+
+    box-shadow:
+      0 0 30px rgba(67, 217, 221, 0.08),
+      inset 0 0 20px rgba(67, 217, 221, 0.04);
+  }
+
+  50% {
+    transform: scale(1.04);
+
+    box-shadow:
+      0 0 45px rgba(67, 217, 221, 0.18),
+      inset 0 0 25px rgba(67, 217, 221, 0.08);
+  }
+}
+/* =========================
+   LOADING SCREEN FADE
+========================= */
+
+.loading-screen {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =========================
+   DASHBOARD PANEL LAYOUT
+========================= */
+
+.hud {
+  position: absolute;
+  inset: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.topbar {
+  position: fixed;
+  top: 28px;
+  left: 34px;
+  right: 34px;
+  z-index: 80;
+}
+
+.left-panel,
+.right-panel,
+.bottom-left,
+.bottom-right,
+.live-data-panel,
+.ai-activity-panel {
+  position: absolute;
+  max-width: calc(100vw - 48px);
+  pointer-events: auto;
+}
+
+.left-panel {
+  top: 105px;
+  left: 34px;
+  width: 315px;
+}
+
+.right-panel {
+  top: 105px;
+  right: 34px;
+  width: 285px;
+}
+
+.bottom-left {
+  left: 34px;
+  bottom: 30px;
+  width: 235px;
+}
+
+.bottom-right {
+  right: 34px;
+  bottom: 30px;
+  width: 235px;
+}
+
+.ai-activity-panel {
+  left: 285px;
+  bottom: 30px;
+  width: 235px;
+}
+
+.live-data-panel {
+  top: 480px;
+  right: 34px;
+  bottom: auto;
+  width: 285px;
+}
+
+.time-controls {
+  position: fixed;
+  z-index: 70;
+}
+
+.map-label {
+  position: fixed;
+  z-index: 60;
+}
+
+.vessel-overlay {
+  z-index: 100;
+}
+
+@media (max-width: 1200px) and (min-width: 801px) {
+  .left-panel {
+    left: 20px;
+  }
+
+  .right-panel {
+    right: 20px;
+  }
+
+  .bottom-left {
+    left: 20px;
+  }
+
+  .ai-activity-panel {
+    left: 270px;
+  }
+
+  .bottom-right,
+  .live-data-panel {
+    right: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .dashboard-section {
+    min-height: 1840px;
+  }
+
+  .hud {
+    min-height: 1840px;
+  }
+
+  .topbar {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+  }
+
+  .left-panel,
+  .right-panel,
+  .bottom-left,
+  .bottom-right,
+  .live-data-panel,
+  .ai-activity-panel {
+    left: 16px;
+    right: auto;
+    width: calc(100vw - 32px);
+    max-width: none;
+    bottom: auto;
+    display: block;
+  }
+
+  .left-panel {
+    top: 80px;
+  }
+
+  .right-panel {
+    top: 455px;
+  }
+
+  .bottom-left {
+    top: 845px;
+  }
+
+  .bottom-right {
+    top: 1000px;
+  }
+
+  .live-data-panel {
+    top: 1135px;
+  }
+
+  .ai-activity-panel {
+    top: 1360px;
+  }
+
+  .time-controls {
+    position: absolute;
+    top: 1670px;
+    bottom: auto;
+  }
+
+  .map-label {
+    position: absolute;
+    top: 1740px;
+    bottom: auto;
+  }
+
+  .live-data-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    left: 12px;
+    right: 12px;
+  }
+
+  .left-panel,
+  .right-panel,
+  .bottom-left,
+  .bottom-right,
+  .live-data-panel,
+  .ai-activity-panel {
+    left: 12px;
+    width: calc(100vw - 24px);
+  }
+}
+
+/* =========================
+   OCEAN ANALYSIS PAGE
+========================= */
+
+.analysis-page {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  overflow: visible;
+  overflow-x: hidden;
+  padding: 0 34px 48px;
+  background:
+    linear-gradient(rgba(2, 11, 20, 0.76), rgba(2, 11, 20, 0.9)),
+    rgba(2, 11, 20, 0.82);
+  color: #f4f7f8;
+  pointer-events: auto;
+}
+
+.analysis-page::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(85, 230, 165, 0.07)
+  );
+}
+
+.analysis-page .analysis-shell {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.analysis-page.analysis-visible .analysis-shell {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.analysis-page.analysis-visible .analysis-shell {
+  transition-delay: 0.1s;
+}
+
+.analysis-shell {
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.analysis-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.analysis-kicker {
+  margin: 0 0 9px;
+  color: rgba(255, 120, 109, 0.8);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.analysis-heading h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(48px, 5vw, 64px);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -1.8px;
+}
+
+.analysis-heading p:last-child {
+  max-width: 570px;
+  margin: 14px 0 0;
+  color: rgba(220, 232, 232, 0.72);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.analysis-state,
+.analysis-updated,
+.analysis-coordinate {
+  color: rgba(220, 232, 232, 0.68);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  white-space: nowrap;
+}
+
+.analysis-state {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+  border: 1px solid rgba(85, 230, 165, 0.16);
+  border-radius: 20px;
+  color: rgba(85, 230, 165, 0.8);
+}
+
+.analysis-state-dot {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: #55e6a5;
+  box-shadow: 0 0 10px rgba(85, 230, 165, 0.7);
+}
+
+.analysis-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.analysis-map,
+.analysis-conditions,
+.analysis-ai,
+.analysis-trends,
+.analysis-risk-card {
+  border-radius: 16px;
+}
+
+.analysis-map {
+  grid-row: span 2;
+  min-height: 535px;
+  padding: 20px;
+}
+
+.analysis-conditions,
+.analysis-ai,
+.analysis-trends {
+  padding: 20px;
+}
+
+.analysis-section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.analysis-section-heading h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.analysis-map-stage {
+  position: relative;
+  min-height: 430px;
+  margin-top: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(85, 230, 165, 0.16);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 53% 48%, rgba(85, 230, 165, 0.16), transparent 19%),
+    linear-gradient(rgba(85, 230, 165, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(85, 230, 165, 0.045) 1px, transparent 1px),
+    rgba(2, 20, 29, 0.7);
+  background-size: auto, 44px 44px, 44px 44px, auto;
+}
+
+.analysis-map-grid {
+  position: absolute;
+  inset: 12% 8%;
+  border: 1px solid rgba(85, 230, 165, 0.18);
+  border-radius: 50%;
+  transform: rotate(-12deg) scaleY(0.78);
+}
+
+.analysis-map-grid::before,
+.analysis-map-grid::after {
+  content: "";
+  position: absolute;
+  inset: 14% 28%;
+  border-left: 1px dashed rgba(85, 230, 165, 0.18);
+  border-right: 1px dashed rgba(85, 230, 165, 0.18);
+}
+
+.analysis-map-grid::after {
+  inset: 35% 8%;
+  border-top: 1px dashed rgba(85, 230, 165, 0.18);
+  border-bottom: 1px dashed rgba(85, 230, 165, 0.18);
+  border-left: 0;
+  border-right: 0;
+}
+
+.analysis-map-ring {
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  border: 1px solid rgba(255, 120, 109, 0.55);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255, 120, 109, 0.12);
+}
+
+.ring-west {
+  top: 49%;
+  left: 20%;
+}
+
+.ring-east {
+  top: 30%;
+  right: 18%;
+  border-color: rgba(255, 120, 109, 0.8);
+}
+
+.ring-north {
+  top: 15%;
+  left: 49%;
+  border-color: rgba(255, 214, 126, 0.65);
+}
+
+.analysis-map-marker {
+  position: absolute;
+  padding: 6px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 5px;
+  background: rgba(2, 11, 20, 0.72);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.marker-vessel {
+  top: 48%;
+  left: 48%;
+  border-color: rgba(85, 230, 165, 0.5);
+  color: #55e6a5;
+}
+
+.marker-west {
+  top: 66%;
+  left: 11%;
+}
+
+.marker-east {
+  top: 25%;
+  right: 4%;
+  color: #ff786d;
+}
+
+.marker-north {
+  top: 8%;
+  left: 43%;
+  color: #ffd67e;
+}
+
+.analysis-map-caption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(220, 232, 232, 0.68);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
+.analysis-map-caption .pulse {
+  width: 6px;
+  height: 6px;
+}
+
+.condition-list {
+  margin-top: 22px;
+}
+
+.condition-row {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.condition-row > div:first-child {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.condition-row span {
+  color: rgba(220, 232, 232, 0.78);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
+.condition-row strong {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 22px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.condition-bar {
+  height: 3px;
+  margin-top: 9px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.condition-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #55e6a5;
+  transition: width 0.7s ease;
+}
+
+.condition-bar.wind-bar i {
+  background: #ffd67e;
+}
+
+.condition-bar.visibility-bar i {
+  background: #7ddcff;
+}
+
+.condition-bar.current-bar i {
+  background: #ff786d;
+}
+
+.condition-note {
+  margin-top: 14px;
+  color: rgba(220, 232, 232, 0.68);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.analysis-ai-score {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.analysis-ai-score strong {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.analysis-ai-score span {
+  color: rgba(220, 232, 232, 0.68);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.analysis-ai-trend {
+  margin: 12px 0 0;
+  color: #ff786d;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.analysis-ai-description {
+  margin: 8px 0 0;
+  color: rgba(220, 232, 232, 0.78);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.analysis-ai-signal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(220, 232, 232, 0.7);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.analysis-risks,
+.analysis-trends {
+  grid-column: 1 / -1;
+}
+
+.analysis-risks {
+  margin-top: 0;
+}
+
+.risk-zone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.analysis-risk-card {
+  min-width: 0;
+  padding: 17px;
+}
+
+.risk-card-topline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.risk-card-topline > span {
+  color: rgba(220, 232, 232, 0.82);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  line-height: 1.4;
+}
+
+.risk-card-topline strong {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.high-risk {
+  color: #ff786d;
+}
+
+.moderate-risk {
+  color: #ffd67e;
+}
+
+.risk-card-score {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 20px;
+}
+
+.risk-card-score strong {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.risk-card-score span {
+  color: rgba(220, 232, 232, 0.62);
+  font-size: 11px;
+}
+
+.analysis-risk-card > p {
+  min-height: 42px;
+  margin: 8px 0 14px;
+  color: rgba(220, 232, 232, 0.78);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.risk-card-action {
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.risk-card-action > span {
+  color: rgba(220, 232, 232, 0.62);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.risk-card-action p {
+  margin: 6px 0 0;
+  color: rgba(220, 232, 232, 0.8);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.trend-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.trend-item {
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.trend-item span,
+.trend-item small {
+  display: block;
+  color: rgba(220, 232, 232, 0.62);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.trend-item strong {
+  display: block;
+  margin-top: 7px;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.trend-item small {
+  margin-top: 3px;
+}
+
+.active-trend {
+  border-color: rgba(85, 230, 165, 0.35);
+}
+
+.active-trend strong {
+  color: #55e6a5;
+}
+
+.elevated-trend {
+  border-color: rgba(255, 120, 109, 0.3);
+}
+
+.elevated-trend strong {
+  color: #ff786d;
+}
+
+@media (max-width: 900px) {
+  .analysis-page {
+    padding: 0 20px 36px;
+  }
+
+  .analysis-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .analysis-map,
+  .analysis-conditions,
+  .analysis-ai,
+  .analysis-risks,
+  .analysis-trends {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .analysis-map {
+    min-height: 480px;
+  }
+
+  .risk-zone-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .analysis-page {
+    padding: 0 12px 28px;
+  }
+
+  .analysis-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .analysis-state {
+    align-self: flex-start;
+  }
+
+  .analysis-map,
+  .analysis-conditions,
+  .analysis-ai,
+  .analysis-trends {
+    padding: 15px;
+  }
+
+  .analysis-map-stage {
+    min-height: 350px;
+  }
+
+  .analysis-coordinate {
+    display: none;
+  }
+
+  .risk-zone-grid,
+  .trend-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-scroll-cue,
+  .dashboard-scroll-cue span {
+    animation: none;
+  }
+
+  .analysis-page .analysis-shell {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .condition-bar i {
+    transition: none;
+  }
+}
+
+/* =========================
+   OCEAN ANALYSIS POLISH
+========================= */
+
+.analysis-page {
+  background: #020b10;
+  background-image: none;
+  padding: 72px 5vw 100px;
+}
+
+.analysis-page::before {
+  background: none;
+  box-shadow: none;
+  opacity: 0;
+}
+
+.analysis-heading h2 {
+  margin-bottom: 22px;
+  color: #f4f7f5;
+  font-size: clamp(42px, 4vw, 50px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.analysis-heading > div:first-child > p:last-child {
+  max-width: 760px;
+  color: rgba(220, 232, 232, 0.68);
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.analysis-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.analysis-map,
+.analysis-conditions,
+.analysis-ai,
+.analysis-trends,
+.analysis-risk-card {
+  position: relative;
+  border-color: rgba(110, 210, 210, 0.14);
+  border-radius: 18px;
+  background: rgba(3, 17, 24, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s ease,
+    box-shadow 0.45s ease,
+    background 0.35s ease;
+}
+
+.analysis-map:hover,
+.analysis-conditions:hover,
+.analysis-ai:hover,
+.analysis-trends:hover,
+.analysis-risk-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(100, 220, 210, 0.32);
+  background: rgba(4, 22, 30, 0.94);
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(40, 180, 170, 0.06);
+}
+
+.analysis-map-stage {
+  animation: oceanAnalysisBreath 7s ease-in-out infinite;
+}
+
+@keyframes oceanAnalysisBreath {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 rgba(50, 210, 190, 0),
+      inset 0 0 35px rgba(30, 150, 150, 0.025);
+  }
+
+  50% {
+    box-shadow:
+      0 0 35px rgba(50, 210, 190, 0.045),
+      inset 0 0 55px rgba(30, 150, 150, 0.045);
+  }
+}
+
+.condition-row {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.condition-row:hover {
+  transform: translateX(5px);
+}
+
+.condition-bar {
+  position: relative;
+}
+
+.condition-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 35%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.22),
+    transparent
+  );
+  transform: translateX(-140%);
+  animation: telemetryScan 3.2s ease-in-out infinite;
+}
+
+.analysis-state-dot {
+  animation: analysisLivePulse 2s ease-in-out infinite;
+}
+
+@keyframes analysisLivePulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 rgba(70, 240, 180, 0);
+  }
+
+  50% {
+    opacity: 0.65;
+    box-shadow: 0 0 12px rgba(70, 240, 180, 0.45);
+  }
+}
+
+@media (max-width: 900px) {
+  .analysis-page {
+    padding: 56px 24px 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .analysis-page {
+    padding: 42px 18px 64px;
+  }
+
+  .analysis-heading h2 {
+    font-size: 2.6rem;
+  }
+
+  .analysis-heading > div:first-child > p:last-child {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .analysis-page *,
+  .analysis-page *::before,
+  .analysis-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* =========================================
+   DASHBOARD — REFERENCE LAYOUT
+   ========================================= */
+
+.dashboard-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.dashboard-section .hud {
+  position: absolute;
+  inset: 0;
+  min-height: 100vh;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* ---------- TOP BAR ---------- */
+
+.dashboard-section .topbar {
+  position: fixed;
+  top: 28px;
+  left: 34px;
+  right: 34px;
+  z-index: 80;
+}
+
+/* ---------- LEFT MAIN PANEL ---------- */
+
+.dashboard-section .left-panel {
+  position: absolute;
+  top: 105px;
+  left: 34px;
+  width: 315px;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+/* ---------- LEFT AI ACTIVITY ---------- */
+
+.dashboard-section .ai-activity-panel {
+  position: absolute;
+  left: 34px;
+  top: 535px;
+  width: 235px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* ---------- LEFT ACTIVE VESSEL ---------- */
+
+.dashboard-section .bottom-left {
+  position: absolute;
+  left: 34px;
+  top: 720px;
+  bottom: auto;
+  width: 235px;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+/* ---------- RIGHT RISK PANEL ---------- */
+
+.dashboard-section .right-panel {
+  position: absolute;
+  top: 105px;
+  right: 34px;
+  width: 285px;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+/* ---------- RIGHT TELEMETRY ---------- */
+
+.dashboard-section .live-data-panel {
+  position: absolute;
+  top: 455px;
+  right: 34px;
+  bottom: auto;
+  width: 285px;
+  z-index: 20;
+}
+
+/* ---------- RIGHT OCEAN SIGNALS ---------- */
+
+.dashboard-section .bottom-right {
+  position: absolute;
+  top: 680px;
+  right: 34px;
+  bottom: auto;
+  width: 235px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* ---------- CENTER TIME CONTROL ---------- */
+
+.dashboard-section .time-controls {
+  position: fixed;
+  left: 50%;
+  bottom: 78px;
+  transform: translateX(-50%);
+  z-index: 70;
+  pointer-events: auto;
+}
+
+/* ---------- CENTER LIVE OCEAN GRID ---------- */
+
+.dashboard-section .map-label {
+  position: fixed;
+  left: 50%;
+  bottom: 31px;
+  transform: translateX(-50%);
+  z-index: 60;
+}
+/* =========================================
+   AQUATRACE DASHBOARD - PANEL POSITION FIX
+   ========================================= */
+
+.hud {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hud > * {
+  pointer-events: auto;
+}
+
+/* ---------- TOP BAR ---------- */
+
+.topbar {
+  position: absolute;
+  top: 28px;
+  left: 36px;
+  right: 36px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 20;
+}
+
+.system-status {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+
+/* ---------- LEFT ANALYSIS ---------- */
+
+.left-panel {
+  position: absolute;
+
+  top: 110px;
+  left: 36px;
+
+  width: 280px;
+  height: 330px;
+
+  box-sizing: border-box;
+
+  z-index: 12;
+}
+
+
+/* ---------- RIGHT PREDICTION ---------- */
+
+.right-panel {
+  position: absolute;
+
+  top: 110px;
+  right: 36px;
+
+  width: 296px;
+  height: 355px;
+
+  box-sizing: border-box;
+
+  z-index: 12;
+}
+
+
+/* ---------- AI ACTIVITY ---------- */
+
+.ai-activity-panel {
+  position: absolute;
+
+  left: 36px;
+  bottom: 170px;
+
+  width: 245px;
+  min-height: 165px;
+
+  box-sizing: border-box;
+
+  z-index: 14;
+}
+
+
+/* ---------- ACTIVE VESSEL ---------- */
+
+.bottom-left {
+  position: absolute;
+
+  left: 36px;
+  bottom: 28px;
+
+  width: 280px;
+  height: 135px;
+
+  box-sizing: border-box;
+
+  z-index: 14;
+}
+
+
+/* ---------- TELEMETRY ---------- */
+
+.live-data-panel {
+  position: absolute;
+
+  right: 36px;
+  top: 480px;
+
+  width: 296px;
+  min-height: 190px;
+
+  box-sizing: border-box;
+
+  z-index: 14;
+}
+
+
+/* ---------- OCEAN SIGNALS ---------- */
+
+.bottom-right {
+  position: absolute;
+
+  right: 36px;
+  bottom: 28px;
+
+  width: 245px;
+  min-height: 120px;
+
+  box-sizing: border-box;
+
+  z-index: 14;
+}
+
+
+/* ---------- TIME CONTROLS ---------- */
+
+.time-controls {
+  position: absolute;
+
+  left: 50%;
+  bottom: 54px;
+
+  transform: translateX(-50%);
+
+  z-index: 18;
+}
+
+
+/* ---------- MAP LABEL ---------- */
+
+.map-label {
+  position: absolute;
+
+  left: 50%;
+  bottom: 18px;
+
+  transform: translateX(-50%);
+
+  z-index: 18;
+}
+
+
+/* =========================================
+   CLOCK
+   ========================================= */
+
+.live-clock {
+  margin-left: 12px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+}
+
+.clock-divider {
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================
+   RESPONSIVE SAFETY
+   ========================================= */
+
+@media (max-width: 1100px) {
+
+  .left-panel {
+    left: 20px;
+    width: 250px;
+  }
+
+  .right-panel {
+    right: 20px;
+    width: 260px;
+  }
+
+  .live-data-panel {
+    right: 20px;
+    width: 260px;
+  }
+
+  .bottom-left {
+    left: 20px;
+    width: 250px;
+  }
+
+  .ai-activity-panel {
+    left: 20px;
+    width: 220px;
+  }
+
+  .bottom-right {
+    right: 20px;
+    width: 220px;
+  }
+
+}
+/* =========================================
+   LOWER PANEL ALIGNMENT
+   ========================================= */
+
+/* AI ACTIVITY */
+.ai-activity-panel {
+  left: 36px;
+  bottom: 175px;
+  width: 245px;
+  min-height: 150px;
+}
+
+/* ACTIVE VESSEL */
+.bottom-left {
+  left: 36px;
+  bottom: 28px;
+  width: 280px;
+  height: 125px;
+}
+
+/* TELEMETRY */
+.live-data-panel {
+  right: 36px;
+  top: 475px;
+  width: 296px;
+  min-height: 180px;
+}
+
+/* OCEAN SIGNALS */
+.bottom-right {
+  right: 36px;
+  bottom: 28px;
+  width: 245px;
+  min-height: 115px;
+}
+
+/* Keep right-side panels visually separated */
+.right-panel {
+  height: 340px;
+}
+
+.live-data-panel {
+  margin-top: 15px;
+}
+/* =========================================
+   AQUATRACE - FINAL PANEL LAYOUT
+   ========================================= */
+
+/* LEFT - ANALYSIS */
+.left-panel {
+  position: absolute !important;
+  top: 110px !important;
+  left: 36px !important;
+  width: 280px !important;
+  height: 330px !important;
+  z-index: 20 !important;
+}
+
+/* LEFT - AI ACTIVITY */
+.ai-activity-panel {
+  position: absolute !important;
+  top: 465px !important;
+  left: 36px !important;
+  bottom: auto !important;
+  width: 280px !important;
+  height: 165px !important;
+  min-height: 0 !important;
+  z-index: 20 !important;
+}
+
+/* LEFT - ACTIVE VESSEL */
+.bottom-left {
+  position: absolute !important;
+  top: 650px !important;
+  left: 36px !important;
+  bottom: auto !important;
+  width: 280px !important;
+  height: 125px !important;
+  z-index: 20 !important;
+}
+
+
+/* RIGHT - AI PREDICTION */
+.right-panel {
+  position: absolute !important;
+  top: 110px !important;
+  right: 36px !important;
+  width: 296px !important;
+  height: 340px !important;
+  z-index: 20 !important;
+}
+
+/* RIGHT - TELEMETRY */
+.live-data-panel {
+  position: absolute !important;
+  top: 465px !important;
+  right: 36px !important;
+  width: 296px !important;
+  height: 190px !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  z-index: 20 !important;
+}
+
+/* RIGHT - OCEAN SIGNALS */
+.bottom-right {
+  position: absolute !important;
+  top: 675px !important;
+  right: 36px !important;
+  bottom: auto !important;
+  width: 245px !important;
+  height: 115px !important;
+  min-height: 0 !important;
+  z-index: 20 !important;
+}
+
+
+/* CENTER CONTROLS */
+
+.time-controls {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 65px !important;
+  transform: translateX(-50%) !important;
+  z-index: 30 !important;
+}
+
+.map-label {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 20px !important;
+  transform: translateX(-50%) !important;
+  z-index: 30 !important;
+}
+.time-controls {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 65px !important;
+  transform: translateX(-50%) !important;
+  z-index: 30 !important;
+}
+
+.map-label {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 20px !important;
+  transform: translateX(-50%) !important;
+  z-index: 30 !important;
+}
+/* =========================================
+   FIX MAP LABEL OVERLAP
+   ========================================= */
+
+.map-label {
+  position: absolute !important;
+
+  left: 50% !important;
+  bottom: 18px !important;
+
+  transform: translateX(-50%) !important;
+
+  width: 180px !important;
+  height: auto !important;
+  min-height: 48px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 7px !important;
+
+  padding: 8px 14px !important;
+  box-sizing: border-box !important;
+
+  white-space: nowrap !important;
+
+  z-index: 50 !important;
+}
+
+
+/* LIVE OCEAN GRID */
+
+.map-label .pulse {
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+}
+
+
+/* SCROLL TO EXPLORE */
+
+.map-label::after {
+  position: static !important;
+
+  display: block !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  transform: none !important;
+
+  white-space: nowrap !important;
+
+  font-size: 8px !important;
+  line-height: 1 !important;
+  letter-spacing: 2px !important;
+
+  opacity: 0.5 !important;
+}
+
+
+/* Keep time controls clearly above it */
+
+.time-controls {
+  position: absolute !important;
+
+  left: 50% !important;
+  bottom: 82px !important;
+
+  transform: translateX(-50%) !important;
+
+  z-index: 60 !important;
+}
+/* REMOVE MAP LABEL PSEUDO TEXT */
+.map-label::after {
+  content: none !important;
+  display: none !important;
+}
+/* =========================================
+   FINAL FIX - BOTTOM CENTER OVERLAP
+   ========================================= */
+
+/* Move LIVE OCEAN GRID slightly upward */
+.dashboard-section .map-label {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 58px !important;
+  transform: translateX(-50%) !important;
+
+  width: 180px !important;
+  min-height: 48px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  flex-direction: row !important;
+  gap: 8px !important;
+
+  padding: 8px 14px !important;
+  box-sizing: border-box !important;
+
+  z-index: 50 !important;
+}
+
+/* Move SCROLL TO EXPLORE below it */
+.dashboard-section .dashboard-scroll-cue {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 18px !important;
+  transform: translateX(-50%) !important;
+
+  z-index: 40 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+
+  white-space: nowrap !important;
+}
+
+/* Make sure the arrow stays beside the text */
+.dashboard-section .dashboard-scroll-cue span {
+  display: inline-block !important;
+}
+
+/* Remove any generated text from map-label */
+.dashboard-section .map-label::after {
+  content: none !important;
+  display: none !important;
+}
+/* =========================================
+   FINAL BOTTOM CENTER POSITIONING
+   ========================================= */
+
+/* TIME CONTROLS - TOP */
+.dashboard-section .time-controls {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 125px !important;
+  transform: translateX(-50%) !important;
+  z-index: 80 !important;
+}
+
+/* LIVE OCEAN GRID - MIDDLE */
+.dashboard-section .map-label {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 65px !important;
+  transform: translateX(-50%) !important;
+
+  width: 245px !important;
+  min-height: 48px !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 8px !important;
+  padding: 8px 14px !important;
+
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
+
+  z-index: 60 !important;
+}
+
+/* SCROLL TO EXPLORE - BOTTOM */
+.dashboard-section .dashboard-scroll-cue {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 18px !important;
+  transform: translateX(-50%) !important;
+
+  z-index: 40 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 8px !important;
+  white-space: nowrap !important;
+}
+
+/* REMOVE EXTRA GENERATED TEXT */
+.dashboard-section .map-label::after {
+  content: none !important;
+  display: none !important;
+}
+/* =========================================
+   OCEAN ANALYSIS - COMPACT TYPOGRAPHY
+   ========================================= */
+
+.analysis-page .analysis-heading h2 {
+  font-size: 38px !important;
+}
+
+.analysis-page .analysis-heading > div:first-child > p:last-child {
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+}
+
+.analysis-page .analysis-kicker {
+  font-size: 9px !important;
+}
+
+.analysis-page .analysis-section-heading h3 {
+  font-size: 16px !important;
+}
+
+.analysis-page .analysis-state,
+.analysis-page .analysis-updated,
+.analysis-page .analysis-coordinate {
+  font-size: 9px !important;
+}
+
+/* Conditions */
+.analysis-page .condition-row span {
+  font-size: 10px !important;
+}
+
+.analysis-page .condition-row strong {
+  font-size: 17px !important;
+}
+
+.analysis-page .condition-note {
+  font-size: 11px !important;
+}
+
+/* AI prediction */
+.analysis-page .analysis-ai-score strong {
+  font-size: 38px !important;
+}
+
+.analysis-page .analysis-ai-score span {
+  font-size: 9px !important;
+}
+
+.analysis-page .analysis-ai-trend {
+  font-size: 13px !important;
+}
+
+.analysis-page .analysis-ai-description {
+  font-size: 12px !important;
+}
+
+.analysis-page .analysis-ai-signal {
+  font-size: 10px !important;
+}
+
+/* Risk cards */
+.analysis-page .risk-card-topline > span {
+  font-size: 11px !important;
+}
+
+.analysis-page .risk-card-topline strong {
+  font-size: 9px !important;
+}
+
+.analysis-page .risk-card-score strong {
+  font-size: 32px !important;
+}
+
+.analysis-page .risk-card-score span {
+  font-size: 9px !important;
+}
+
+.analysis-page .analysis-risk-card > p {
+  font-size: 11px !important;
+}
+
+.analysis-page .risk-card-action > span {
+  font-size: 9px !important;
+}
+
+.analysis-page .risk-card-action p {
+  font-size: 11px !important;
+}
+
+/* Trend cards */
+.analysis-page .trend-item span,
+.analysis-page .trend-item small {
+  font-size: 9px !important;
+}
+
+.analysis-page .trend-item strong {
+  font-size: 25px !important;
+}
+/* =========================================
+   RISK INTELLIGENCE MODAL - COMPACT TEXT
+   ========================================= */
+
+.risk-modal {
+  width: 390px !important;
+  padding: 26px !important;
+}
+
+.risk-modal h2 {
+  font-size: 24px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.5px !important;
+  margin: 8px 0 10px !important;
+}
+
+.risk-modal h3 {
+  font-size: 11px !important;
+  line-height: 1.3 !important;
+  letter-spacing: 1.5px !important;
+  margin: 20px 0 8px !important;
+}
+
+.risk-modal p {
+  font-size: 11px !important;
+  line-height: 1.55 !important;
+  margin: 6px 0 !important;
+}
+
+.risk-modal strong {
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+}
+
+.risk-modal span {
+  font-size: 8px !important;
+  letter-spacing: 1.2px !important;
+}
+
+.risk-modal .close-button {
+  font-size: 8px !important;
+  padding: 10px !important;
+}
+/* =========================================
+   OCEAN ANALYSIS PAGE — COMPACT TYPOGRAPHY
+========================================= */
+
+.ocean-analysis-page h1 {
+  font-size: 30px !important;
+  line-height: 1.1 !important;
+}
+
+.ocean-analysis-page h2 {
+  font-size: 17px !important;
+  line-height: 1.25 !important;
+}
+
+.ocean-analysis-page h3 {
+  font-size: 14px !important;
+  line-height: 1.3 !important;
+}
+
+.ocean-analysis-page p {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+
+.ocean-analysis-page .section-title {
+  font-size: 14px !important;
+}
+
+.ocean-analysis-page .panel-title {
+  font-size: 16px !important;
+}
+
+.ocean-analysis-page .metric-value {
+  font-size: 28px !important;
+}
+/* =================================
+   OCEAN ANALYSIS — LARGER HEADINGS
+================================= */
+
+.ocean-analysis h1 {
+  font-size: 38px !important;
+  line-height: 1.15 !important;
+}
+
+.ocean-analysis h2 {
+  font-size: 22px !important;
+  line-height: 1.25 !important;
+}
+
+.ocean-analysis h3 {
+  font-size: 16px !important;
+  line-height: 1.3 !important;
+}
+
+.ocean-analysis .section-label {
+  font-size: 11px !important;
+  letter-spacing: 2.5px !important;
+}
+/* =========================================
+   OCEAN ANALYSIS — BIGGER HEADINGS
+========================================= */
+
+.analysis-heading h2 {
+  font-size: 58px !important;
+}
+
+.analysis-kicker {
+  font-size: 14px !important;
+}
+
+.analysis-section-heading h3 {
+  font-size: 24px !important;
+}
+
+.analysis-risk-card .risk-card-topline > span {
+  font-size: 16px !important;
+}
+
+.analysis-risk-card .risk-card-topline strong {
+  font-size: 12px !important;
+}
+/* =========================
+   TOP NAVIGATION
+========================= */
+
+.top-navigation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  margin-right: 22px;
+}
+
+.top-navigation button {
+  border: 1px solid transparent;
+  background: transparent;
+  color: rgba(220, 240, 250, 0.55);
+  padding: 8px 12px;
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.top-navigation button:hover {
+  color: #00d9ff;
+  background: rgba(0, 210, 255, 0.06);
+  border-color: rgba(0, 210, 255, 0.15);
+}
+
+.top-navigation button.active {
+  color: #00d9ff;
+  background: rgba(0, 210, 255, 0.08);
+  border-color: rgba(0, 210, 255, 0.22);
+}

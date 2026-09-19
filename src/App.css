@@ -1,0 +1,8009 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "Manrope", sans-serif;
+  color: #f4f7f5;
+  background: #061312;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  background: #061312;
+}
+
+:root {
+  font-family: "Manrope", sans-serif;
+  color: #f4f7f5;
+  background: #061312;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  background: #061312;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.app {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 75% 15%, rgba(36, 113, 101, 0.16), transparent 30%),
+    #061312;
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 82px;
+  padding: 0 5vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 100;
+  background: rgba(6, 19, 18, 0.55);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.logo {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.logo span {
+  color: #6ee7c8;
+}
+
+.logo-mark {
+  color: #6ee7c8 !important;
+  margin-right: 9px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+}
+
+.nav-links a {
+  color: #a9bab6;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-button {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: white;
+  padding: 11px 18px;
+  border-radius: 100px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding: 130px 5vw 80px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  width: 52%;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #79d8bf;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  margin-bottom: 28px;
+}
+
+.eyebrow span {
+  width: 7px;
+  height: 7px;
+  background: #6ee7c8;
+  border-radius: 50%;
+  box-shadow: 0 0 14px #6ee7c8;
+}
+
+.hero h1 {
+  font-size: clamp(58px, 7vw, 110px);
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+  font-weight: 700;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: #6ee7c8;
+}
+
+.hero-content > p {
+  max-width: 500px;
+  margin-top: 35px;
+
+  color: #91a6a1;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 35px;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 14px 20px;
+  border-radius: 100px;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.primary-button {
+  background: #6ee7c8;
+  color: #061312;
+}
+
+.primary-button span {
+  font-size: 17px;
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.05);
+  color: #d4dfdc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* OCEAN VISUAL */
+
+.ocean-visual {
+  position: absolute;
+  right: -5%;
+  top: 15%;
+  width: 58vw;
+  height: 70vh;
+}
+
+.glow {
+  position: absolute;
+  inset: 15%;
+  border-radius: 50%;
+
+  background: rgba(31, 137, 117, 0.22);
+  filter: blur(90px);
+}
+
+.ocean {
+  position: absolute;
+  inset: 5%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle at 50% 42%, rgba(63, 185, 160, 0.28), transparent 34%),
+    radial-gradient(circle at 50% 50%, #0d3833, #061716 62%, #04100f);
+
+  border: 1px solid rgba(111, 231, 200, 0.14);
+
+  box-shadow:
+    inset -40px -50px 100px rgba(0, 0, 0, 0.55),
+    0 0 100px rgba(48, 164, 140, 0.12);
+
+  transform: rotate(-13deg);
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  width: 130%;
+  height: 25%;
+  left: -15%;
+
+  border-top: 1px solid rgba(110, 231, 200, 0.18);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}
+
+.wave-one {
+  top: 25%;
+}
+
+.wave-two {
+  top: 45%;
+  transform: rotate(-17deg);
+}
+
+.wave-three {
+  top: 65%;
+  transform: rotate(-14deg);
+}
+
+.hotspot {
+  position: absolute;
+  top: 37%;
+  left: 55%;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: #a5fff0;
+}
+
+.pulse {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #6ee7c8;
+
+  box-shadow:
+    0 0 0 8px rgba(110, 231, 200, 0.08),
+    0 0 25px rgba(110, 231, 200, 0.9);
+}
+
+.trajectory {
+  position: absolute;
+  width: 50%;
+  height: 30%;
+  top: 35%;
+  left: 20%;
+
+  border-top: 1px dashed rgba(110, 231, 200, 0.4);
+  border-radius: 50%;
+
+  transform: rotate(15deg);
+}
+
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #6ee7c8;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #6ee7c8;
+}
+
+.p1 {
+  top: 20%;
+  left: 15%;
+}
+
+.p2 {
+  top: 35%;
+  left: 38%;
+}
+
+.p3 {
+  top: 48%;
+  left: 61%;
+}
+
+.p4 {
+  top: 60%;
+  left: 83%;
+}
+
+.ocean-label {
+  position: absolute;
+  bottom: 4%;
+  right: 8%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: #77908a;
+}
+
+.ocean-label strong {
+  color: #d4dfdc;
+  font-size: 11px;
+}
+
+/* SCROLL */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 35px;
+  left: 5vw;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  color: #607773;
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.scroll-indicator div {
+  width: 45px;
+  height: 1px;
+  background: #607773;
+}
+
+/* INTRO */
+
+.intro {
+  min-height: 80vh;
+  padding: 150px 10vw;
+
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 40px;
+
+  align-items: center;
+
+  background: #081b19;
+}
+
+.section-number {
+  color: #5d7771;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+}
+
+.section-label {
+  color: #6ee7c8;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  margin-bottom: 25px;
+}
+
+.intro h2,
+.priority h2 {
+  font-size: clamp(45px, 6vw, 85px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.intro h2 span {
+  color: #728b86;
+}
+
+.section-description {
+  max-width: 550px;
+  margin-top: 35px;
+
+  color: #91a6a1;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* PROCESS */
+
+.process {
+  padding: 120px 5vw;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.process-card {
+  min-height: 330px;
+  padding: 50px;
+
+  background: #061312;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.process-card span {
+  color: #6ee7c8;
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.process-card h3 {
+  margin-top: 55px;
+
+  font-size: clamp(28px, 3vw, 46px);
+  letter-spacing: -0.04em;
+}
+
+.process-card p {
+  max-width: 420px;
+  margin-top: 18px;
+
+  color: #819792;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* PRIORITY */
+
+.priority {
+  min-height: 80vh;
+  padding: 150px 10vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at 70% 50%, rgba(54, 143, 125, 0.16), transparent 35%),
+    #071816;
+}
+
+.priority h2 em {
+  color: #6ee7c8;
+  font-style: normal;
+}
+
+.priority-text {
+  max-width: 360px;
+}
+
+.priority-text p {
+  color: #91a6a1;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    min-height: 100vh;
+    padding-top: 130px;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(55px, 14vw, 85px);
+  }
+
+  .hero-content > p {
+    max-width: 430px;
+  }
+
+  .ocean-visual {
+    opacity: 0.4;
+    width: 100vw;
+    right: -35%;
+  }
+
+  .process {
+    grid-template-columns: 1fr;
+  }
+
+  .priority {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 70px;
+  }
+}
+/* LIVE CLOCK */
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.clock-divider {
+  opacity: 0.35;
+  margin: 0 2px;
+}
+
+.live-clock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #6ee7c8;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 10px rgba(110, 231, 200, 0.35);
+}
+
+.live-time {
+  font-weight: 500;
+}
+
+.live-date {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.timezone {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 9px;
+}
+/* =========================
+   AQUATRACE DASHBOARD
+   CLOCK
+========================= */
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.clock-divider {
+  color: rgba(255, 255, 255, 0.25);
+  margin: 0 4px;
+}
+
+.live-clock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "DM Mono", monospace;
+}
+
+.live-time {
+  color: #6ee7c8;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 12px rgba(110, 231, 200, 0.35);
+}
+
+.live-date {
+  color: #91a6a1;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+.timezone {
+  color: #6f8983;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  padding: 4px 7px;
+  border: 1px solid rgba(110, 231, 200, 0.18);
+  border-radius: 4px;
+}
+/* =========================================================
+   AQUATRACE AI — DASHBOARD
+========================================================= */
+
+.app {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #020b0b;
+  color: #e8fffa;
+}
+
+/* =========================================================
+   HUD
+========================================================= */
+
+.hud {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  pointer-events: none;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+
+  height: 72px;
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(2, 12, 12, 0.72);
+  border-bottom: 1px solid rgba(110, 231, 200, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  pointer-events: auto;
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(110, 231, 200, 0.45);
+  border-radius: 8px;
+
+  color: #6ee7c8;
+  background: rgba(110, 231, 200, 0.06);
+
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+
+  box-shadow:
+    0 0 20px rgba(110, 231, 200, 0.08),
+    inset 0 0 15px rgba(110, 231, 200, 0.04);
+}
+
+.brand-name {
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: #e8fffa;
+}
+
+.brand-subtitle {
+  margin-top: 3px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  color: #65827c;
+}
+
+/* =========================================================
+   SYSTEM STATUS
+========================================================= */
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: #7e9993;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+  background: #6ee7c8;
+
+  box-shadow:
+    0 0 8px rgba(110, 231, 200, 0.9),
+    0 0 18px rgba(110, 231, 200, 0.4);
+
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   GLASS PANELS
+========================================================= */
+
+.glass {
+  background: rgba(4, 19, 19, 0.68);
+
+  border: 1px solid rgba(110, 231, 200, 0.13);
+  border-radius: 12px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+/* =========================================================
+   LEFT PANEL
+========================================================= */
+
+.left-panel {
+  position: fixed;
+  left: 24px;
+  top: 96px;
+
+  width: 250px;
+  padding: 18px;
+
+  pointer-events: auto;
+}
+
+.left-panel h3,
+.right-panel h3,
+.mini-panel h3,
+.live-data-panel h3,
+.ai-activity-panel h3 {
+  margin: 0;
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: #6f8983;
+}
+
+.panel-title {
+  margin-bottom: 18px;
+}
+
+/* =========================================================
+   TELEMETRY VALUES
+========================================================= */
+
+.telemetry-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.telemetry-row:last-child {
+  border-bottom: none;
+}
+
+.telemetry-label {
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  color: #66817a;
+  letter-spacing: 0.08em;
+}
+
+.telemetry-value {
+  font-family: "DM Mono", monospace;
+  font-size: 18px;
+  color: #dffcf5;
+}
+
+.telemetry-unit {
+  margin-left: 4px;
+  font-size: 9px;
+  color: #6ee7c8;
+}
+
+/* =========================================================
+   RIGHT PANEL
+========================================================= */
+
+.right-panel {
+  position: fixed;
+  top: 96px;
+  right: 24px;
+
+  width: 290px;
+  padding: 20px;
+
+  pointer-events: auto;
+}
+
+.prediction-score {
+  margin-top: 12px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 48px;
+  line-height: 1;
+
+  color: #6ee7c8;
+
+  text-shadow:
+    0 0 24px rgba(110, 231, 200, 0.18);
+}
+
+.prediction-risk {
+  margin-top: 8px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+
+  color: #f0d98c;
+}
+
+.prediction-trend {
+  margin-top: 12px;
+
+  font-size: 11px;
+  color: #9bb2ac;
+}
+
+.prediction-description {
+  margin-top: 14px;
+
+  font-size: 11px;
+  line-height: 1.7;
+
+  color: #819b94;
+}
+
+/* =========================================================
+   BOTTOM PANELS
+========================================================= */
+
+.bottom-left {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+
+  pointer-events: auto;
+}
+
+.bottom-right {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+
+  pointer-events: auto;
+}
+
+/* =========================================================
+   MINI PANEL
+========================================================= */
+
+.mini-panel {
+  min-width: 220px;
+  padding: 15px;
+}
+
+.mini-panel-value {
+  margin-top: 10px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 16px;
+  color: #dffcf5;
+}
+
+/* =========================================================
+   LIVE DATA PANEL
+========================================================= */
+
+.live-data-panel {
+  width: 270px;
+  padding: 17px;
+  pointer-events: auto;
+}
+
+.live-data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+
+  margin-top: 14px;
+}
+
+.live-data-item {
+  padding: 10px;
+
+  border: 1px solid rgba(110, 231, 200, 0.08);
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.live-data-item span {
+  display: block;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  color: #607b75;
+}
+
+.live-data-item strong {
+  display: block;
+
+  margin-top: 5px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  font-weight: 500;
+
+  color: #dffcf5;
+}
+
+/* =========================================================
+   AI ACTIVITY
+========================================================= */
+
+.ai-activity-panel {
+  width: 250px;
+  padding: 17px;
+
+  pointer-events: auto;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 12px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  color: #76918a;
+}
+
+.activity-dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+  background: #6ee7c8;
+}
+
+/* =========================================================
+   TIME CONTROLS
+========================================================= */
+
+.time-controls {
+  position: fixed;
+  left: 50%;
+  bottom: 26px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 4px;
+
+  padding: 5px;
+
+  border: 1px solid rgba(110, 231, 200, 0.12);
+  border-radius: 8px;
+
+  background: rgba(3, 16, 16, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  pointer-events: auto;
+}
+
+.time-controls button {
+  min-width: 48px;
+  padding: 8px 10px;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+
+  background: transparent;
+
+  color: #607b75;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.time-controls button:hover {
+  color: #bdeee2;
+  background: rgba(110, 231, 200, 0.05);
+}
+
+.time-controls button.active {
+  color: #6ee7c8;
+
+  background: rgba(110, 231, 200, 0.08);
+  border-color: rgba(110, 231, 200, 0.18);
+
+  box-shadow: 0 0 14px rgba(110, 231, 200, 0.05);
+}
+
+/* =========================================================
+   MAP LABEL
+========================================================= */
+
+.map-label {
+  position: fixed;
+  left: 50%;
+  top: 88px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 7px 12px;
+
+  border: 1px solid rgba(110, 231, 200, 0.1);
+  border-radius: 5px;
+
+  background: rgba(2, 12, 12, 0.5);
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.13em;
+
+  color: #607b75;
+
+  pointer-events: none;
+}
+
+.map-label .pulse {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+  background: #6ee7c8;
+
+  box-shadow: 0 0 10px rgba(110, 231, 200, 0.7);
+}
+
+/* =========================================================
+   VESSEL BUTTON
+========================================================= */
+
+.vessel-button {
+  pointer-events: auto;
+
+  padding: 9px 13px;
+
+  border: 1px solid rgba(110, 231, 200, 0.2);
+  border-radius: 6px;
+
+  background: rgba(4, 22, 21, 0.75);
+
+  color: #8fb8ae;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.vessel-button:hover {
+  color: #6ee7c8;
+  border-color: rgba(110, 231, 200, 0.4);
+
+  box-shadow: 0 0 20px rgba(110, 231, 200, 0.08);
+}
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+.vessel-overlay,
+.risk-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 7, 7, 0.62);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  pointer-events: auto;
+}
+
+.vessel-modal,
+.risk-modal {
+  width: min(440px, calc(100vw - 40px));
+  padding: 24px;
+
+  border: 1px solid rgba(110, 231, 200, 0.18);
+  border-radius: 12px;
+
+  background: rgba(4, 20, 20, 0.94);
+
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(110, 231, 200, 0.04);
+
+  animation: modalIn 0.25s ease-out;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.vessel-modal h2,
+.risk-modal h2 {
+  margin: 0;
+
+  font-family: "DM Mono", monospace;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+
+  color: #dffcf5;
+}
+
+.vessel-modal p,
+.risk-modal p {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #7e9993;
+}
+
+.modal-close {
+  float: right;
+
+  width: 28px;
+  height: 28px;
+
+  border: 1px solid rgba(110, 231, 200, 0.12);
+  border-radius: 5px;
+
+  background: transparent;
+
+  color: #66817a;
+
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #6ee7c8;
+  border-color: rgba(110, 231, 200, 0.3);
+}
+
+/* =========================================================
+   LOADING SCREEN
+========================================================= */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #020b0b;
+
+  opacity: 1;
+
+  transition: opacity 0.5s ease;
+
+  pointer-events: auto;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-content {
+  width: min(360px, calc(100vw - 48px));
+
+  text-align: center;
+}
+
+.loading-logo {
+  width: 52px;
+  height: 52px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(110, 231, 200, 0.4);
+  border-radius: 10px;
+
+  color: #6ee7c8;
+
+  font-family: "DM Mono", monospace;
+  font-size: 15px;
+  font-weight: 600;
+
+  box-shadow:
+    0 0 30px rgba(110, 231, 200, 0.08),
+    inset 0 0 20px rgba(110, 231, 200, 0.04);
+}
+
+.loading-content h2 {
+  margin: 0;
+
+  font-family: "DM Mono", monospace;
+  font-size: 16px;
+  letter-spacing: 0.18em;
+
+  color: #e8fffa;
+}
+
+.loading-content p {
+  margin: 8px 0 26px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+
+  color: #58736d;
+}
+
+.loading-bar {
+  width: 100%;
+  height: 2px;
+
+  overflow: hidden;
+
+  background: rgba(110, 231, 200, 0.08);
+  border-radius: 2px;
+}
+
+.loading-progress {
+  width: 45%;
+  height: 100%;
+
+  background: #6ee7c8;
+
+  box-shadow: 0 0 12px rgba(110, 231, 200, 0.7);
+
+  animation: loadingProgress 1.8s ease-in-out forwards;
+}
+
+@keyframes loadingProgress {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.loading-content span {
+  display: block;
+
+  margin-top: 12px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+
+  color: #58736d;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+  .topbar {
+    padding: 0 16px;
+  }
+
+  .system-status {
+    font-size: 8px;
+  }
+
+  .live-date {
+    display: none;
+  }
+
+  .left-panel {
+    left: 12px;
+    top: 88px;
+    width: 210px;
+  }
+
+  .right-panel {
+    right: 12px;
+    top: 88px;
+    width: 230px;
+  }
+
+  .bottom-left {
+    left: 12px;
+    bottom: 75px;
+  }
+
+  .bottom-right {
+    right: 12px;
+    bottom: 75px;
+  }
+
+  .live-data-panel {
+    width: 220px;
+  }
+
+  .ai-activity-panel {
+    width: 210px;
+  }
+
+  .time-controls {
+    bottom: 18px;
+  }
+}
+
+@media (max-width: 650px) {
+  .topbar {
+    height: 60px;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .system-status {
+    gap: 6px;
+  }
+
+  .clock-divider,
+  .live-date {
+    display: none;
+  }
+
+  .left-panel,
+  .right-panel {
+    position: fixed;
+    top: 72px;
+
+    width: calc(50vw - 20px);
+    padding: 12px;
+  }
+
+  .left-panel {
+    left: 10px;
+  }
+
+  .right-panel {
+    right: 10px;
+  }
+
+  .prediction-score {
+    font-size: 32px;
+  }
+
+  .bottom-left,
+  .bottom-right {
+    display: none;
+  }
+
+  .map-label {
+    top: 66px;
+  }
+}
+/* =========================================================
+   3D OCEAN — FULL SCREEN BACKGROUND
+========================================================= */
+
+.app > canvas,
+.app canvas {
+  position: fixed !important;
+  inset: 0 !important;
+
+  width: 100vw !important;
+  height: 100vh !important;
+
+  z-index: 1 !important;
+  display: block;
+}
+
+/* Keep all dashboard UI above the ocean */
+
+.hud {
+  position: relative;
+  z-index: 10;
+}
+
+/* Top navigation always stays above everything */
+
+.topbar {
+  z-index: 50;
+}
+
+/* Loading screen stays above the ocean and HUD */
+
+.loading-screen {
+  z-index: 1000;
+}
+
+/* Modals stay above the dashboard */
+
+.vessel-overlay,
+.risk-overlay {
+  z-index: 100;
+}
+/* =========================================================
+   AQUATRACE — HUD POLISH
+========================================================= */
+
+.glass {
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(110, 231, 200, 0.35),
+    transparent
+  );
+
+  opacity: 0.7;
+}
+
+.glass:hover {
+  border-color: rgba(110, 231, 200, 0.22);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(110, 231, 200, 0.035),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+/* =========================================================
+   SECTION LABELS
+========================================================= */
+
+.panel-title,
+.left-panel .eyebrow,
+.right-panel .eyebrow {
+  color: #6ee7c8;
+  letter-spacing: 0.14em;
+}
+
+/* =========================================================
+   NUMERIC DATA GLOW
+========================================================= */
+
+.telemetry-value,
+.live-data-item strong,
+.mini-panel-value {
+  text-shadow: 0 0 12px rgba(110, 231, 200, 0.08);
+}
+
+/* =========================================================
+   RISK INDICATORS
+========================================================= */
+
+.risk-high {
+  color: #ff9f9f;
+}
+
+.risk-moderate {
+  color: #f0d98c;
+}
+
+.risk-low {
+  color: #6ee7c8;
+}
+
+/* =========================================================
+   SUBTLE HUD GRID
+========================================================= */
+
+.hud::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(110, 231, 200, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(110, 231, 200, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    transparent 75%
+  );
+}
+
+/* =========================================================
+   SCREEN VIGNETTE
+========================================================= */
+
+.app::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 45%,
+      rgba(0, 8, 8, 0.28) 100%
+    );
+}
+
+/* =========================================================
+   CLOCK REFINEMENT
+========================================================= */
+
+.live-time {
+  min-width: 62px;
+  text-align: right;
+}
+
+.timezone {
+  user-select: none;
+}
+
+/* =========================================================
+   MOBILE HUD GRID
+========================================================= */
+
+@media (max-width: 650px) {
+  .hud::before {
+    background-size: 50px 50px;
+  }
+
+  .glass {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+}
+/* =========================================================
+   RISK INTELLIGENCE MODAL
+========================================================= */
+
+.risk-modal {
+  width: min(460px, calc(100vw - 40px));
+}
+
+.risk-modal-score {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-top: 24px;
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid rgba(110, 231, 200, 0.08);
+}
+
+.risk-modal-score span,
+.risk-analysis-box > span,
+.risk-recommendation > span {
+  display: block;
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+
+  color: #5f7b74;
+}
+
+.risk-modal-score strong {
+  display: block;
+
+  margin-top: 6px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 48px;
+  line-height: 1;
+
+  font-weight: 500;
+
+  color: #6ee7c8;
+
+  text-shadow:
+    0 0 20px rgba(110, 231, 200, 0.12);
+}
+
+.risk-modal-score small {
+  margin-left: 4px;
+
+  font-size: 10px;
+  color: #58736d;
+}
+
+.risk-modal-badge {
+  padding: 7px 10px;
+
+  border: 1px solid rgba(240, 217, 140, 0.2);
+  border-radius: 5px;
+
+  background: rgba(240, 217, 140, 0.04);
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+
+  color: #f0d98c;
+}
+
+.risk-analysis-box,
+.risk-recommendation {
+  margin-top: 16px;
+  padding: 14px;
+
+  border: 1px solid rgba(110, 231, 200, 0.08);
+  border-radius: 7px;
+
+  background: rgba(110, 231, 200, 0.025);
+}
+
+.risk-analysis-box p,
+.risk-recommendation p {
+  margin: 8px 0 0;
+
+  font-size: 11px;
+  line-height: 1.7;
+
+  color: #8ba49e;
+}
+
+.risk-recommendation {
+  border-color: rgba(240, 217, 140, 0.1);
+  background: rgba(240, 217, 140, 0.025);
+}
+
+.risk-recommendation > span {
+  color: #d5bf78;
+}
+/* =========================================
+   VESSEL INTELLIGENCE MODAL
+   ========================================= */
+
+.vessel-modal {
+  width: min(460px, calc(100vw - 40px));
+}
+
+.vessel-modal .eyebrow {
+  margin-bottom: 10px;
+  color: #6ee7c8;
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+}
+
+.vessel-modal h2 {
+  margin: 0;
+  font-family: "DM Mono", monospace;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: #e8fffa;
+}
+
+.close-vessel {
+  float: right;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(110, 231, 200, 0.12);
+  border-radius: 5px;
+  background: transparent;
+  color: #6f8983;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.close-vessel:hover {
+  color: #6ee7c8;
+  border-color: rgba(110, 231, 200, 0.35);
+  background: rgba(110, 231, 200, 0.04);
+}
+
+.vessel-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 8px 10px;
+  border: 1px solid rgba(110, 231, 200, 0.1);
+  border-radius: 5px;
+  background: rgba(110, 231, 200, 0.025);
+
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: #6ee7c8;
+}
+
+.vessel-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.vessel-detail {
+  padding: 12px;
+  border: 1px solid rgba(110, 231, 200, 0.08);
+  border-radius: 7px;
+  background: rgba(110, 231, 200, 0.025);
+}
+
+.vessel-detail span {
+  display: block;
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: #5f7b74;
+}
+
+.vessel-detail strong {
+  display: block;
+  margin-top: 6px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #dffcf5;
+}
+
+.risk-text {
+  color: #f0d98c !important;
+}
+
+.route-box {
+  margin-top: 16px;
+  padding: 14px;
+
+  border: 1px solid rgba(110, 231, 200, 0.08);
+  border-radius: 7px;
+  background: rgba(110, 231, 200, 0.025);
+}
+
+.route-box span {
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: #6ee7c8;
+}
+
+.route-box p {
+  margin: 8px 0 0;
+
+  font-size: 11px;
+  line-height: 1.7;
+  color: #8ba49e;
+}
+
+.close-button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 11px 14px;
+
+  border: 1px solid rgba(110, 231, 200, 0.18);
+  border-radius: 6px;
+  background: rgba(110, 231, 200, 0.05);
+
+  color: #6ee7c8;
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.close-button:hover {
+  background: rgba(110, 231, 200, 0.1);
+  border-color: rgba(110, 231, 200, 0.35);
+  box-shadow: 0 0 20px rgba(110, 231, 200, 0.07);
+}
+
+@media (max-width: 520px) {
+  .vessel-details {
+    grid-template-columns: 1fr;
+  }
+
+  .vessel-modal h2 {
+    font-size: 17px;
+  }
+}
+/* =========================================
+   LIVE OCEAN ANALYSIS PANEL
+   ========================================= */
+
+.left-panel {
+  width: 300px;
+  padding: 22px;
+}
+
+.left-panel .eyebrow,
+.right-panel .eyebrow {
+  margin-bottom: 8px;
+}
+
+.panel-title {
+  margin: 0;
+  font-family: "DM Mono", monospace;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #e8fffa;
+}
+
+.panel-subtitle {
+  margin: 4px 0 0;
+  font-size: 10px;
+  color: #5f7b74;
+  letter-spacing: 0.04em;
+}
+
+.panel-description {
+  margin: 14px 0 20px;
+  font-size: 10px;
+  line-height: 1.7;
+  color: #7f9791;
+}
+
+.metric {
+  margin-top: 16px;
+}
+
+.metric-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.metric-line span:first-child {
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: #69827c;
+}
+
+.metric-line span:last-child {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  color: #dffcf5;
+}
+
+.metric-line small {
+  margin-left: 3px;
+  font-size: 8px;
+  color: #58736d;
+}
+
+.metric-bar {
+  width: 100%;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(110, 231, 200, 0.07);
+}
+
+.metric-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #6ee7c8;
+  box-shadow: 0 0 10px rgba(110, 231, 200, 0.3);
+  transition: width 0.6s ease;
+}
+
+.metric-fill.wind {
+  background: #f0d98c;
+  box-shadow: 0 0 10px rgba(240, 217, 140, 0.25);
+}
+
+.metric-fill.visibility {
+  background: #9fd7ff;
+  box-shadow: 0 0 10px rgba(159, 215, 255, 0.25);
+}
+
+
+/* =========================================
+   AI PREDICTION PANEL
+   ========================================= */
+
+.right-panel {
+  width: 320px;
+  padding: 22px;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.risk-badge {
+  padding: 5px 8px;
+  border: 1px solid rgba(240, 217, 140, 0.2);
+  border-radius: 4px;
+  background: rgba(240, 217, 140, 0.04);
+
+  font-family: "DM Mono", monospace;
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  color: #f0d98c;
+}
+
+.risk-score {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  margin-top: 24px;
+}
+
+.score {
+  font-family: "DM Mono", monospace;
+  font-size: 52px;
+  line-height: 0.9;
+  font-weight: 500;
+  color: #e8fffa;
+  text-shadow: 0 0 24px rgba(110, 231, 200, 0.12);
+}
+
+.score-label {
+  padding-bottom: 4px;
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: #5f7b74;
+}
+
+.prediction {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 12px;
+
+  border: 1px solid rgba(110, 231, 200, 0.08);
+  border-radius: 6px;
+  background: rgba(110, 231, 200, 0.025);
+}
+
+.prediction-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+
+  border: 1px solid rgba(110, 231, 200, 0.15);
+  border-radius: 50%;
+
+  color: #6ee7c8;
+  font-size: 10px;
+}
+
+.prediction strong {
+  display: block;
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #dffcf5;
+}
+
+.prediction p {
+  margin: 5px 0 0;
+  font-size: 9px;
+  line-height: 1.6;
+  color: #718b84;
+}
+
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.forecast-item {
+  padding: 10px 7px;
+  text-align: center;
+
+  border: 1px solid rgba(110, 231, 200, 0.07);
+  border-radius: 5px;
+  background: rgba(110, 231, 200, 0.018);
+}
+
+.forecast-item span {
+  display: block;
+  font-family: "DM Mono", monospace;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  color: #5f7b74;
+}
+
+.forecast-item strong {
+  display: block;
+  margin-top: 6px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 14px;
+  font-weight: 500;
+  color: #dffcf5;
+}
+
+.forecast-item small {
+  display: block;
+  margin-top: 3px;
+  font-size: 7px;
+  color: #627b75;
+}
+
+
+/* =========================================
+   RESPONSIVE PANELS
+   ========================================= */
+
+@media (max-width: 900px) {
+  .left-panel {
+    width: 270px;
+  }
+
+  .right-panel {
+    width: 285px;
+  }
+}
+
+@media (max-width: 700px) {
+  .left-panel,
+  .right-panel {
+    width: calc(100vw - 32px);
+    max-width: none;
+  }
+
+  .left-panel {
+    top: 82px;
+  }
+
+  .right-panel {
+    top: auto;
+    bottom: 150px;
+  }
+}
+
+@media (max-width: 520px) {
+  .forecast {
+    gap: 5px;
+  }
+
+  .score {
+    font-size: 44px;
+  }
+}
+/* =========================================
+   LIVE OCEAN TELEMETRY
+   ========================================= */
+
+.live-data-panel {
+  width: 430px;
+  padding: 16px 18px;
+}
+
+.live-data-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.live-data-header span:first-child {
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  color: #6ee7c8;
+}
+
+.live-data-header span:last-child {
+  font-family: "DM Mono", monospace;
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  color: #4e6862;
+}
+
+.live-data-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+}
+
+.live-data-item {
+  padding: 10px 8px;
+  border: 1px solid rgba(110, 231, 200, 0.07);
+  border-radius: 5px;
+  background: rgba(110, 231, 200, 0.02);
+}
+
+.live-data-item span {
+  display: block;
+  font-family: "DM Mono", monospace;
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  color: #58736d;
+}
+
+.live-data-item strong {
+  display: block;
+  margin-top: 6px;
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: #dffcf5;
+}
+
+.live-data-item small {
+  margin-left: 2px;
+  font-size: 7px;
+  color: #58736d;
+}
+
+
+/* =========================================
+   AI ACTIVITY PANEL
+   ========================================= */
+
+.ai-activity-panel {
+  width: 260px;
+  padding: 15px 16px;
+}
+
+.ai-activity-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 11px;
+}
+
+.ai-activity-header span:first-child {
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.13em;
+  color: #6ee7c8;
+}
+
+.ai-activity-header span:last-child {
+  font-family: "DM Mono", monospace;
+  font-size: 7px;
+  color: #4e6862;
+}
+
+.activity-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 25px;
+
+  border-bottom: 1px solid rgba(110, 231, 200, 0.05);
+
+  font-size: 8px;
+  color: #78928b;
+}
+
+.activity-line:last-child {
+  border-bottom: none;
+}
+
+.activity-dot {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 5px;
+  border-radius: 50%;
+  background: #6ee7c8;
+  box-shadow: 0 0 8px rgba(110, 231, 200, 0.45);
+}
+
+.activity-line.warning .activity-dot {
+  background: #f0d98c;
+  box-shadow: 0 0 8px rgba(240, 217, 140, 0.4);
+}
+
+.activity-line.warning {
+  color: #b8a66e;
+}
+
+
+/* =========================================
+   BOTTOM PANELS RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .live-data-panel {
+    width: 380px;
+  }
+
+  .ai-activity-panel {
+    width: 230px;
+  }
+}
+
+@media (max-width: 700px) {
+  .live-data-panel {
+    width: calc(100vw - 32px);
+  }
+
+  .ai-activity-panel {
+    width: calc(100vw - 32px);
+  }
+
+  .live-data-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .live-data-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .live-data-item strong {
+    font-size: 11px;
+  }
+}
+/* =========================================
+   TIME RANGE CONTROLS
+   ========================================= */
+
+.time-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+}
+
+.time-controls button {
+  position: relative;
+
+  min-width: 58px;
+  padding: 8px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+
+  color: #5f7973;
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.time-controls button:hover {
+  color: #bcefe3;
+  background: rgba(110, 231, 200, 0.04);
+  border-color: rgba(110, 231, 200, 0.08);
+}
+
+.time-controls button.active {
+  color: #6ee7c8;
+  background: rgba(110, 231, 200, 0.07);
+  border-color: rgba(110, 231, 200, 0.18);
+  box-shadow:
+    inset 0 0 12px rgba(110, 231, 200, 0.025),
+    0 0 14px rgba(110, 231, 200, 0.04);
+}
+
+.time-controls button.active::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+
+  width: 16px;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: #6ee7c8;
+  box-shadow: 0 0 8px rgba(110, 231, 200, 0.5);
+}
+
+
+/* =========================================
+   TIME CONTROL LABEL
+   ========================================= */
+
+.time-controls::before {
+  content: "FORECAST";
+
+  margin-right: 5px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  color: #405b55;
+}
+
+
+/* =========================================
+   MOBILE TIME CONTROLS
+   ========================================= */
+
+@media (max-width: 600px) {
+  .time-controls {
+    gap: 2px;
+    padding: 4px;
+  }
+
+  .time-controls::before {
+    display: none;
+  }
+
+  .time-controls button {
+    min-width: 52px;
+    padding: 8px 7px;
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 380px) {
+  .time-controls button {
+    min-width: 46px;
+    padding: 7px 5px;
+    font-size: 6px;
+  }
+}
+/* =========================================
+   OCEAN MAP / HUD VISUAL DEPTH
+   ========================================= */
+
+.app {
+  isolation: isolate;
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(22, 86, 76, 0.12),
+      transparent 42%
+    ),
+    #061312;
+}
+
+.hud::before {
+  opacity: 0.45;
+  background-size: 44px 44px;
+}
+
+.hud::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 2;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 35%,
+      rgba(2, 12, 11, 0.18) 65%,
+      rgba(2, 10, 9, 0.58) 100%
+    );
+}
+
+
+/* =========================================
+   MAP LABEL
+   ========================================= */
+
+.map-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 7px 10px;
+
+  border: 1px solid rgba(110, 231, 200, 0.1);
+  border-radius: 4px;
+
+  background: rgba(3, 18, 16, 0.62);
+  backdrop-filter: blur(8px);
+
+  font-family: "DM Mono", monospace;
+  font-size: 7px;
+  letter-spacing: 0.13em;
+  color: #59736d;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.15),
+    inset 0 0 20px rgba(110, 231, 200, 0.015);
+}
+
+.map-label .pulse {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+
+  border-radius: 50%;
+  background: #6ee7c8;
+
+  box-shadow:
+    0 0 7px rgba(110, 231, 200, 0.7),
+    0 0 16px rgba(110, 231, 200, 0.25);
+
+  animation: mapPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes mapPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+
+/* =========================================
+   GLASS PANELS — DEEPER HUD EFFECT
+   ========================================= */
+
+.glass {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(11, 34, 31, 0.72),
+      rgba(4, 20, 18, 0.62)
+    );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    inset 0 0 30px rgba(110, 231, 200, 0.012);
+}
+
+.glass::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(110, 231, 200, 0.025),
+      transparent 28%,
+      transparent 72%,
+      rgba(110, 231, 200, 0.012)
+    );
+}
+
+
+/* =========================================
+   BRAND / SYSTEM HEADER
+   ========================================= */
+
+.brand-mark {
+  box-shadow:
+    0 0 14px rgba(110, 231, 200, 0.14),
+    inset 0 0 12px rgba(110, 231, 200, 0.04);
+}
+
+.brand-name {
+  text-shadow:
+    0 0 14px rgba(110, 231, 200, 0.12);
+}
+
+.system-status {
+  text-shadow:
+    0 0 10px rgba(110, 231, 200, 0.05);
+}
+
+
+/* =========================================
+   STATUS INDICATOR
+   ========================================= */
+
+.status-dot {
+  position: relative;
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+  background: #6ee7c8;
+
+  box-shadow:
+    0 0 7px rgba(110, 231, 200, 0.7),
+    0 0 14px rgba(110, 231, 200, 0.22);
+
+  animation: systemPulse 2s ease-in-out infinite;
+}
+
+@keyframes systemPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================
+   VESSEL BUTTON
+   ========================================= */
+
+.vessel-card-button {
+  cursor: pointer;
+  text-align: left;
+}
+
+.vessel-card-button:hover {
+  transform: translateY(-2px);
+}
+
+.vessel-card-button:active {
+  transform: translateY(0);
+}
+
+.vessel-button {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.vessel-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(110, 231, 200, 0.25);
+  box-shadow: 0 0 20px rgba(110, 231, 200, 0.06);
+}
+
+
+/* =========================================
+   MODAL BACKDROP
+   ========================================= */
+
+.vessel-overlay {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(7, 34, 29, 0.18),
+      rgba(0, 7, 6, 0.78)
+    );
+}
+
+.vessel-modal {
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.55),
+    0 0 50px rgba(110, 231, 200, 0.035),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================
+   LOADING SCREEN
+   ========================================= */
+
+.loading-screen {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(18, 70, 62, 0.16),
+      transparent 38%
+    ),
+    #03100f;
+}
+
+.loading-screen::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(110, 231, 200, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(110, 231, 200, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.loading-screen > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================
+   MOBILE HUD DEPTH
+   ========================================= */
+
+@media (max-width: 700px) {
+  .hud::before {
+    opacity: 0.22;
+  }
+
+  .hud::after {
+    background:
+      radial-gradient(
+        ellipse at center,
+        transparent 25%,
+        rgba(2, 12, 11, 0.62) 100%
+      );
+  }
+
+  .glass {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+/* ===== FIX: KEEP ALL DASHBOARD BOXES VISIBLE ===== */
+
+.hud {
+  position: relative;
+  z-index: 10;
+}
+
+.topbar,
+.left-panel,
+.right-panel,
+.bottom-left,
+.bottom-right,
+.live-data-panel,
+.ai-activity-panel,
+.time-controls,
+.map-label,
+.vessel-card-button {
+  position: relative;
+  z-index: 20;
+}
+
+/* Bottom-right panels must sit above overlapping map/UI elements */
+.bottom-right {
+  z-index: 30;
+}
+
+.live-data-panel {
+  z-index: 40;
+}
+
+/* Activity panel */
+.ai-activity-panel {
+  z-index: 35;
+}
+
+/* Vessel panel */
+.bottom-left {
+  z-index: 35;
+}
+
+/* Forecast controls */
+.time-controls {
+  z-index: 50;
+}
+
+/* Never let the ocean canvas cover the HUD */
+canvas {
+  z-index: 1 !important;
+}
+
+.hud {
+  z-index: 100;
+}
+/* ===== FIX: SEPARATE BOTTOM DASHBOARD BOXES ===== */
+
+.bottom-left {
+  left: 36px;
+  bottom: 30px;
+  width: 245px;
+}
+
+.ai-activity-panel {
+  left: 295px;
+  bottom: 30px;
+  width: 245px;
+}
+
+.bottom-right {
+  right: 36px;
+  bottom: 30px;
+  width: 245px;
+}
+
+.live-data-panel {
+  right: 36px;
+  bottom: 250px;
+  width: 245px;
+}
+/* ===== RESPONSIVE DASHBOARD PANEL FIX ===== */
+
+@media (max-width: 1200px) {
+  .left-panel {
+    left: 24px;
+    width: 300px;
+  }
+
+  .right-panel {
+    right: 24px;
+    width: 300px;
+  }
+
+  .bottom-left {
+    left: 24px;
+  }
+
+  .ai-activity-panel {
+    left: 285px;
+  }
+
+  .bottom-right,
+  .live-data-panel {
+    right: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .left-panel,
+  .right-panel {
+    width: 260px;
+  }
+
+  .ai-activity-panel {
+    left: 24px;
+    bottom: 170px;
+  }
+
+
+/* =========================================
+   CURRENT DASHBOARD CLASS ALIGNMENT
+   ========================================= */
+
+.brand h1 {
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: #e8fffa;
+}
+
+.brand > div:last-child > span {
+  display: block;
+  margin-top: 3px;
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  color: #65827c;
+}
+
+.system-status {
+  min-width: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.live-clock {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.left-panel h2 {
+  margin: 0;
+  font-family: "DM Mono", monospace;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  color: #e8fffa;
+}
+
+.left-panel h2 span {
+  color: #6ee7c8;
+}
+
+.description {
+  margin: 14px 0 20px;
+  font-size: 10px;
+  line-height: 1.7;
+  color: #7f9791;
+}
+
+.metric > div:first-child {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.metric > div:first-child span {
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: #69827c;
+}
+
+.metric > div:first-child strong {
+  flex: 0 0 auto;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: #dffcf5;
+}
+
+.metric-line {
+  width: 100%;
+  height: 3px;
+  margin-top: 7px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(110, 231, 200, 0.07);
+}
+
+.metric-fill {
+  width: 72%;
+}
+
+.metric:nth-of-type(3) .metric-fill {
+  width: 58%;
+}
+
+.metric:nth-of-type(4) .metric-fill {
+  width: 82%;
+}
+
+.risk-score .score small {
+  margin-left: 4px;
+  font-size: 10px;
+  color: #58736d;
+}
+
+.forecast > div {
+  padding: 10px 7px;
+  text-align: center;
+  border: 1px solid rgba(110, 231, 200, 0.07);
+  border-radius: 5px;
+  background: rgba(110, 231, 200, 0.018);
+}
+
+.forecast > div span,
+.forecast > div strong {
+  display: block;
+  font-family: "DM Mono", monospace;
+}
+
+.forecast > div span {
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  color: #5f7b74;
+}
+
+.forecast > div strong {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #dffcf5;
+}
+
+.live-data-panel,
+.ai-activity-panel {
+  position: fixed;
+  border: 1px solid rgba(110, 231, 200, 0.13);
+  border-radius: 12px;
+  background: rgba(4, 19, 19, 0.68);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+}
+
+.live-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #6ee7c8;
+  box-shadow: 0 0 8px rgba(110, 231, 200, 0.7);
+}
+
+.mini-title,
+.live-data-header,
+.ai-activity-header {
+  font-family: "DM Mono", monospace;
+}
+
+.mini-title {
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  color: #6ee7c8;
+}
+
+.vessel-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.vessel-icon {
+  color: #6ee7c8;
+  font-size: 20px;
+}
+
+.vessel-info strong,
+.vessel-info div span,
+.coordinates,
+.click-hint,
+.signal {
+  display: block;
+  font-family: "DM Mono", monospace;
+}
+
+.vessel-info strong {
+  font-size: 11px;
+  font-weight: 500;
+  color: #dffcf5;
+}
+
+.vessel-info div span,
+.coordinates {
+  margin-top: 4px;
+  font-size: 8px;
+  color: #718b84;
+}
+
+.click-hint {
+  margin-top: 14px;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  color: #6ee7c8;
+}
+
+.signal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 25px;
+  border-bottom: 1px solid rgba(110, 231, 200, 0.05);
+  font-size: 8px;
+  color: #78928b;
+}
+
+.signal:last-child {
+  border-bottom: none;
+}
+
+.signal-dot {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 5px;
+  border-radius: 50%;
+  background: #6ee7c8;
+  box-shadow: 0 0 8px rgba(110, 231, 200, 0.45);
+}
+
+.signal-dot.warning {
+  background: #f0d98c;
+  box-shadow: 0 0 8px rgba(240, 217, 140, 0.4);
+}
+
+.ai-activity-panel .activity-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 25px;
+  margin-top: 0;
+  border-bottom: 1px solid rgba(110, 231, 200, 0.05);
+}
+
+.ai-activity-panel .activity-item:last-child {
+  border-bottom: none;
+}
+
+.ai-activity-panel .activity-line {
+  min-height: 0;
+  border-bottom: 0;
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  color: #78928b;
+}
+
+@media (max-width: 700px) {
+  .system-status {
+    max-width: 58vw;
+  }
+
+  .live-clock {
+    gap: 5px;
+  }
+
+  .live-data-panel,
+  .ai-activity-panel {
+    background: rgba(4, 19, 19, 0.86);
+  }
+}
+
+@media (max-width: 520px) {
+  .system-status {
+    gap: 6px;
+    font-size: 8px;
+  }
+
+  .timezone {
+    padding: 3px 5px;
+  }
+}
+  .bottom-left {
+    left: 24px;
+  }
+
+  .bottom-right {
+    right: 24px;
+  }
+
+  .live-data-panel {
+    right: 24px;
+    bottom: 170px;
+  }
+
+  .time-controls {
+    bottom: 24px;
+  }
+}
+/* ===== CENTRAL OCEAN MAP VISIBILITY ===== */
+
+.ocean-scene,
+.ocean-map,
+canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hud {
+  position: relative;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Dashboard panels remain clickable */
+.hud .glass,
+.hud button,
+.hud .vessel-card-button,
+.hud .time-controls,
+.hud .map-label {
+  pointer-events: auto;
+}
+
+/* Keep the central map visible */
+.ocean-scene {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Don't let panel backgrounds become completely opaque */
+.glass {
+  background: rgba(3, 15, 24, 0.82);
+}
+
+/* Map label stays above the ocean */
+.map-label {
+  z-index: 60;
+}
+
+/* =========================================
+   LOADING AND DASHBOARD ENTRANCE
+   ========================================= */
+
+.loading-screen {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(22, 86, 76, 0.2),
+      transparent 42%
+    ),
+    #020b0b;
+  transition: opacity 0.6s ease;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-content {
+  animation: loadingContentIn 0.7s ease-out both;
+}
+
+.loading-logo {
+  animation: loadingLogoPulse 2.4s ease-in-out infinite;
+}
+
+.loading-content h2 {
+  letter-spacing: 0.16em;
+}
+
+.loading-content p {
+  color: #6faaa0;
+  letter-spacing: 0.14em;
+}
+
+.loading-content > span {
+  color: #6f8983;
+}
+
+.loading-progress {
+  animation: loadingProgress 1.8s ease-in-out forwards;
+}
+
+.app > canvas {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.75s ease, transform 0.9s ease;
+}
+
+.app.is-loading > canvas {
+  opacity: 0;
+  transform: scale(1.015);
+}
+
+.dashboard-ready .topbar,
+.dashboard-ready .left-panel,
+.dashboard-ready .right-panel,
+.dashboard-ready .live-data-panel,
+.dashboard-ready .ai-activity-panel,
+.dashboard-ready .bottom-left,
+.dashboard-ready .bottom-right,
+.dashboard-ready .time-controls,
+.dashboard-ready .map-label {
+  animation: dashboardPanelIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.dashboard-ready .topbar {
+  animation-delay: 0.05s;
+}
+
+.dashboard-ready .left-panel {
+  animation-delay: 0.12s;
+}
+
+.dashboard-ready .right-panel {
+  animation-delay: 0.18s;
+}
+
+.dashboard-ready .live-data-panel {
+  animation-delay: 0.24s;
+}
+
+.dashboard-ready .ai-activity-panel {
+  animation-delay: 0.3s;
+}
+
+.dashboard-ready .bottom-left,
+.dashboard-ready .bottom-right,
+.dashboard-ready .time-controls,
+.dashboard-ready .map-label {
+  animation-delay: 0.36s;
+}
+
+@keyframes loadingContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loadingLogoPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 24px rgba(110, 231, 200, 0.08),
+      inset 0 0 16px rgba(110, 231, 200, 0.04);
+  }
+
+  50% {
+    box-shadow:
+      0 0 34px rgba(110, 231, 200, 0.16),
+      inset 0 0 20px rgba(110, 231, 200, 0.07);
+  }
+}
+
+@keyframes dashboardPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 650px) {
+  .loading-content {
+    width: min(300px, calc(100vw - 48px));
+  }
+
+  .loading-content h2 {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-screen,
+  .app > canvas {
+    transition: none;
+  }
+
+  .loading-content,
+  .loading-logo,
+  .loading-progress,
+  .dashboard-ready .topbar,
+  .dashboard-ready .left-panel,
+  .dashboard-ready .right-panel,
+  .dashboard-ready .live-data-panel,
+  .dashboard-ready .ai-activity-panel,
+  .dashboard-ready .bottom-left,
+  .dashboard-ready .bottom-right,
+  .dashboard-ready .time-controls,
+  .dashboard-ready .map-label {
+    animation: none;
+  }
+
+  .app.is-loading > canvas,
+  .app > canvas {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =========================================
+   LIVE TELEMETRY FEEDBACK
+   ========================================= */
+
+.live-data-item strong {
+  animation: telemetryValueIn 0.35s ease-out;
+}
+
+@keyframes telemetryValueIn {
+  from {
+    opacity: 0.55;
+    transform: translateY(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-data-item strong {
+    animation: none;
+  }
+}
+
+/* =========================================
+   PANEL LAYOUT CONTRACT
+   ========================================= */
+
+.app {
+  overflow: hidden;
+}
+
+.hud {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  pointer-events: none;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 80;
+}
+
+.left-panel,
+.right-panel,
+.bottom-left,
+.bottom-right,
+.live-data-panel,
+.ai-activity-panel {
+  position: absolute;
+  max-width: calc(100vw - 48px);
+  pointer-events: auto;
+}
+
+.left-panel {
+  top: 96px;
+  left: 24px;
+  width: 300px;
+}
+
+.right-panel {
+  top: 96px;
+  right: 24px;
+  width: 320px;
+}
+
+.bottom-left {
+  left: 24px;
+  bottom: 24px;
+  width: 245px;
+}
+
+.ai-activity-panel {
+  left: 285px;
+  bottom: 24px;
+  width: 245px;
+}
+
+.bottom-right {
+  right: 24px;
+  bottom: 24px;
+  width: 245px;
+}
+
+.live-data-panel {
+  top: 470px;
+  right: 24px;
+  bottom: auto;
+  width: 320px;
+}
+
+.map-label {
+  position: fixed;
+  z-index: 60;
+}
+
+.time-controls {
+  position: fixed;
+  z-index: 70;
+}
+
+@media (max-width: 1200px) and (min-width: 801px) {
+  .left-panel {
+    left: 20px;
+    width: 280px;
+  }
+
+  .right-panel {
+    right: 20px;
+    width: 290px;
+  }
+
+  .bottom-left {
+    left: 20px;
+  }
+
+  .ai-activity-panel {
+    left: 280px;
+  }
+
+  .bottom-right,
+  .live-data-panel {
+    right: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .hud {
+    min-height: 1480px;
+    padding-top: 0;
+  }
+
+  .left-panel,
+  .right-panel,
+  .bottom-left,
+  .bottom-right,
+  .live-data-panel,
+  .ai-activity-panel {
+    left: 16px;
+    right: auto;
+    width: calc(100vw - 32px);
+    max-width: none;
+    bottom: auto;
+  }
+
+  .left-panel {
+    top: 82px;
+  }
+
+  .right-panel {
+    top: 410px;
+  }
+
+  .bottom-left {
+    top: 735px;
+  }
+
+  .bottom-right {
+    top: 890px;
+  }
+
+  .live-data-panel {
+    top: 1050px;
+  }
+
+  .ai-activity-panel {
+    top: 1240px;
+  }
+
+  .bottom-left,
+  .bottom-right,
+  .live-data-panel,
+  .ai-activity-panel,
+  .right-panel {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .live-data-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    padding: 0 12px;
+  }
+
+  .left-panel,
+  .right-panel,
+  .bottom-left,
+  .bottom-right,
+  .live-data-panel,
+  .ai-activity-panel {
+    left: 12px;
+    width: calc(100vw - 24px);
+  }
+
+  .left-panel {
+    top: 76px;
+  }
+
+  .right-panel {
+    top: 400px;
+  }
+
+  .bottom-left {
+    top: 730px;
+  }
+
+  .bottom-right {
+    top: 890px;
+  }
+
+  .live-data-panel {
+    top: 1050px;
+  }
+
+  .ai-activity-panel {
+    top: 1240px;
+  }
+
+  .live-data-grid {
+    gap: 6px;
+  }
+}
+/* =========================================================
+   OCEAN ANALYSIS — PREMIUM UI + ANIMATION
+   ========================================================= */
+
+#ocean-analysis {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 5vw 120px;
+
+  /* Remove the dark green coloration */
+  background: #02090e !important;
+  background-image: none !important;
+
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Remove any atmospheric green pseudo-elements */
+#ocean-analysis::before,
+#ocean-analysis::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* ---------------------------------------------------------
+   REMOVE GREEN STRIP / GLOW FROM CHILD ELEMENTS
+   --------------------------------------------------------- */
+
+#ocean-analysis > div {
+  background-image: none;
+}
+
+/* ---------------------------------------------------------
+   MAIN TITLE
+   --------------------------------------------------------- */
+
+#ocean-analysis h1 {
+  font-size: clamp(3.2rem, 5vw, 5.5rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.045em !important;
+  font-weight: 700 !important;
+  color: #f4f7f5 !important;
+
+  margin-bottom: 24px !important;
+
+  animation: oceanTitleReveal 0.9s
+    cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+/* ---------------------------------------------------------
+   SECTION DESCRIPTION
+   --------------------------------------------------------- */
+
+#ocean-analysis p {
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  color: rgba(220, 232, 232, 0.68);
+
+}
+
+/* Don't make tiny descriptive text too large */
+#ocean-analysis .eyebrow,
+#ocean-analysis .section-label,
+#ocean-analysis .section-number {
+  font-size: 0.78rem !important;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------
+   HEADINGS INSIDE CARDS
+   --------------------------------------------------------- */
+
+#ocean-analysis h2 {
+  font-size: clamp(1.4rem, 2vw, 2rem) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em;
+}
+
+#ocean-analysis h3 {
+  font-size: 1.25rem !important;
+}
+
+/* ---------------------------------------------------------
+   GENERAL TEXT IMPROVEMENT
+   --------------------------------------------------------- */
+
+#ocean-analysis span {
+  line-height: 1.4;
+}
+
+/* Data numbers should be clearly readable */
+#ocean-analysis strong {
+  font-size: 1rem;
+}
+
+/* Large numerical values */
+#ocean-analysis .score,
+#ocean-analysis .risk-score,
+#ocean-analysis .risk-value {
+  font-size: clamp(2.8rem, 5vw, 4.5rem) !important;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+/* ---------------------------------------------------------
+   CARDS / PANELS
+   --------------------------------------------------------- */
+
+#ocean-analysis .glass,
+#ocean-analysis .analysis-card,
+#ocean-analysis .ocean-card {
+  background: rgba(3, 14, 21, 0.92);
+  border: 1px solid rgba(110, 210, 210, 0.14);
+  border-radius: 18px;
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s ease,
+    box-shadow 0.45s ease,
+    background 0.35s ease;
+
+  animation: oceanCardReveal 0.8s
+    cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+/* Stagger cards */
+#ocean-analysis .glass:nth-child(2),
+#ocean-analysis .analysis-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+#ocean-analysis .glass:nth-child(3),
+#ocean-analysis .analysis-card:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+#ocean-analysis .glass:nth-child(4),
+#ocean-analysis .analysis-card:nth-child(4) {
+  animation-delay: 0.36s;
+}
+
+/* Card hover */
+#ocean-analysis .glass:hover,
+#ocean-analysis .analysis-card:hover,
+#ocean-analysis .ocean-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(80, 220, 210, 0.35);
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.32),
+    0 0 35px rgba(40, 200, 190, 0.06);
+
+  background: rgba(4, 20, 28, 0.96);
+}
+
+/* ---------------------------------------------------------
+   PRIMARY OCEAN VISUALIZATION
+   --------------------------------------------------------- */
+
+#ocean-analysis canvas {
+  display: block;
+}
+
+/* Subtle breathing/glow */
+#ocean-analysis .primary-visualization {
+  animation:
+    oceanVisualizationPulse 6s ease-in-out infinite;
+}
+
+@keyframes oceanVisualizationPulse {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 30px rgba(40, 200, 190, 0.02),
+      0 0 0 rgba(40, 200, 190, 0);
+  }
+
+  50% {
+    box-shadow:
+      inset 0 0 55px rgba(40, 200, 190, 0.055),
+      0 0 35px rgba(40, 200, 190, 0.035);
+  }
+}
+
+/* ---------------------------------------------------------
+   TELEMETRY / DATA ROWS
+   --------------------------------------------------------- */
+
+#ocean-analysis .telemetry-row,
+#ocean-analysis .metric,
+#ocean-analysis .data-row {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+#ocean-analysis .telemetry-row:hover,
+#ocean-analysis .metric:hover,
+#ocean-analysis .data-row:hover {
+  transform: translateX(6px);
+}
+
+/* ---------------------------------------------------------
+   PROGRESS / TELEMETRY BARS
+   --------------------------------------------------------- */
+
+#ocean-analysis .metric-line,
+#ocean-analysis .progress-bar,
+#ocean-analysis .telemetry-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+#ocean-analysis .metric-line::after,
+#ocean-analysis .progress-bar::after,
+#ocean-analysis .telemetry-bar::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 35%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.22),
+    transparent
+  );
+
+  animation: telemetryScan 3s ease-in-out infinite;
+}
+
+@keyframes telemetryScan {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  55%,
+  100% {
+    transform: translateX(320%);
+  }
+}
+
+/* ---------------------------------------------------------
+   LIVE INDICATORS
+   --------------------------------------------------------- */
+
+#ocean-analysis .live-dot,
+#ocean-analysis .live-indicator,
+#ocean-analysis .status-dot,
+#ocean-analysis .pulse {
+  animation: liveIndicatorPulse 2s ease-in-out infinite;
+}
+
+@keyframes liveIndicatorPulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 rgba(60, 230, 180, 0);
+  }
+
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 14px rgba(60, 230, 180, 0.5);
+  }
+}
+
+/* ---------------------------------------------------------
+   RISK ZONES
+   --------------------------------------------------------- */
+
+#ocean-analysis .risk-zone {
+  transition:
+    transform 0.4s ease,
+    border-color 0.35s ease,
+    box-shadow 0.4s ease;
+}
+
+#ocean-analysis .risk-zone:hover {
+  transform: translateY(-5px) scale(1.015);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(255, 100, 80, 0.07);
+}
+
+/* ---------------------------------------------------------
+   RISK / STATUS BADGES
+   --------------------------------------------------------- */
+
+#ocean-analysis .risk-badge,
+#ocean-analysis .risk-modal-badge {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#ocean-analysis .risk-badge:hover,
+#ocean-analysis .risk-modal-badge:hover {
+  transform: scale(1.05);
+
+  box-shadow:
+    0 0 20px rgba(255, 100, 80, 0.12);
+}
+
+/* ---------------------------------------------------------
+   TITLE ANIMATION
+   --------------------------------------------------------- */
+
+@keyframes oceanTitleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   CARD ENTRANCE
+   --------------------------------------------------------- */
+
+@keyframes oceanCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   FLOATING ATMOSPHERE
+   --------------------------------------------------------- */
+
+#ocean-analysis .floating-element {
+  animation: gentleFloat 5s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+/* ---------------------------------------------------------
+   BUTTONS
+   --------------------------------------------------------- */
+
+#ocean-analysis button {
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#ocean-analysis button:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  #ocean-analysis {
+    padding: 64px 28px 90px;
+  }
+
+  #ocean-analysis h1 {
+    font-size: clamp(2.8rem, 8vw, 4.2rem) !important;
+  }
+
+  #ocean-analysis p {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  #ocean-analysis {
+    padding: 48px 18px 70px;
+  }
+
+  #ocean-analysis h1 {
+    font-size: 2.7rem !important;
+  }
+
+  #ocean-analysis h2 {
+    font-size: 1.45rem !important;
+  }
+
+  #ocean-analysis p {
+    font-size: 0.98rem !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  #ocean-analysis *,
+  #ocean-analysis *::before,
+  #ocean-analysis *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* =========================================================
+   OCEAN ANALYSIS — UI UPGRADE
+   ========================================================= */
+
+.analysis-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 90px 5vw 140px;
+
+  /* REMOVE DARK GREEN BACKGROUND */
+  background: #02080d !important;
+  background-image: none !important;
+
+  overflow: hidden;
+}
+
+/* Remove unwanted green glow/strip */
+.analysis-page::before,
+.analysis-page::after {
+  display: none !important;
+  content: none !important;
+}
+
+.analysis-shell {
+  position: relative;
+  z-index: 2;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.analysis-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+
+  margin-bottom: 55px;
+
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+.analysis-visible .analysis-heading {
+  animation: analysisHeaderIn 0.9s
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    forwards;
+}
+
+.analysis-kicker {
+  margin: 0 0 14px !important;
+
+  font-family: "DM Mono", monospace;
+  font-size: 0.78rem !important;
+  font-weight: 600;
+
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  color: #ff7567 !important;
+}
+
+.analysis-heading h2 {
+  margin: 0 0 20px !important;
+
+  font-size: clamp(3.5rem, 6vw, 6.5rem) !important;
+  line-height: 0.95 !important;
+
+  font-weight: 700 !important;
+  letter-spacing: -0.055em;
+
+  color: #f5f8f7 !important;
+}
+
+.analysis-heading h2 + p {
+  max-width: 760px;
+
+  margin: 0 !important;
+
+  font-size: 1.08rem !important;
+  line-height: 1.75 !important;
+
+  color: rgba(220, 235, 235, 0.68) !important;
+}
+
+/* Live model feed */
+
+.analysis-state {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 13px 18px;
+
+  border: 1px solid rgba(70, 230, 190, 0.25);
+  border-radius: 999px;
+
+  background: rgba(3, 18, 23, 0.7);
+
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+
+  color: #66e6c0;
+
+  animation: liveFeedGlow 2.5s ease-in-out infinite;
+}
+
+.analysis-state-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background: #5ce6b6;
+
+  box-shadow: 0 0 14px rgba(92, 230, 182, 0.8);
+
+  animation: liveDot 1.8s ease-in-out infinite;
+}
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.analysis-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.7fr)
+    minmax(350px, 0.8fr);
+
+  gap: 24px;
+}
+
+/* =========================================================
+   ALL CARDS
+   ========================================================= */
+
+.analysis-map,
+.analysis-conditions,
+.analysis-ai,
+.analysis-trends,
+.analysis-risk-card {
+  position: relative;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(7, 20, 28, 0.97),
+      rgba(2, 11, 17, 0.98)
+    ) !important;
+
+  border: 1px solid rgba(120, 190, 200, 0.15);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 70px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s ease,
+    box-shadow 0.45s ease;
+}
+
+/* animated border glow */
+
+.analysis-map::before,
+.analysis-conditions::before,
+.analysis-ai::before,
+.analysis-trends::before,
+.analysis-risk-card::before {
+  content: "";
+
+  position: absolute;
+  inset: -1px;
+
+  border-radius: inherit;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 20%,
+      rgba(80, 220, 210, 0.35),
+      transparent 80%
+    );
+
+  transition: opacity 0.4s ease;
+}
+
+.analysis-map:hover::before,
+.analysis-conditions:hover::before,
+.analysis-ai:hover::before,
+.analysis-trends:hover::before,
+.analysis-risk-card:hover::before {
+  opacity: 1;
+}
+
+.analysis-map:hover,
+.analysis-conditions:hover,
+.analysis-ai:hover,
+.analysis-trends:hover,
+.analysis-risk-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(90, 220, 210, 0.3);
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.35),
+    0 0 35px rgba(60, 210, 200, 0.05);
+}
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+.analysis-map {
+  grid-row: span 2;
+
+  padding: 28px;
+
+  min-height: 610px;
+
+  opacity: 0;
+  transform: translateY(45px);
+}
+
+.analysis-visible .analysis-map {
+  animation: analysisCardIn 0.9s 0.15s
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    forwards;
+}
+
+.analysis-section-heading {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+.analysis-section-heading h3 {
+  margin: 0 !important;
+
+  font-size: 1.55rem !important;
+  line-height: 1.2;
+
+  letter-spacing: -0.025em;
+
+  color: #f2f7f7 !important;
+}
+
+.analysis-coordinate,
+.analysis-updated {
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.12em;
+
+  color: rgba(190, 215, 218, 0.5);
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   MAP STAGE
+   ========================================================= */
+
+.analysis-map-stage {
+  position: relative;
+
+  min-height: 500px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(70, 210, 210, 0.2);
+
+  border-radius: 16px;
+
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(20, 140, 130, 0.14),
+      transparent 35%
+    ),
+    #03151b;
+
+  box-shadow:
+    inset 0 0 70px rgba(0, 180, 180, 0.035);
+}
+
+/* grid */
+
+.analysis-map-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(70, 210, 210, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(70, 210, 210, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  transform: perspective(700px) rotateX(8deg) scale(1.08);
+
+  animation: mapGridMove 12s linear infinite;
+}
+
+/* moving scan */
+
+.analysis-map-stage::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  height: 2px;
+
+  top: -5px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(80, 230, 210, 0.6),
+    transparent
+  );
+
+  box-shadow: 0 0 18px rgba(80, 230, 210, 0.4);
+
+  animation: mapScan 5s linear infinite;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   MAP RINGS
+   ========================================================= */
+
+.analysis-map-ring {
+  position: absolute;
+
+  border: 2px solid rgba(80, 210, 200, 0.5);
+
+  border-radius: 50%;
+
+  animation: riskRingPulse 3s ease-in-out infinite;
+}
+
+.ring-west {
+  width: 90px;
+  height: 90px;
+
+  left: 22%;
+  top: 48%;
+
+  border-color: rgba(255, 110, 95, 0.65);
+}
+
+.ring-east {
+  width: 110px;
+  height: 110px;
+
+  right: 18%;
+  top: 28%;
+
+  border-color: rgba(255, 100, 90, 0.75);
+
+  animation-delay: 0.8s;
+}
+
+.ring-north {
+  width: 75px;
+  height: 75px;
+
+  left: 48%;
+  top: 18%;
+
+  border-color: rgba(245, 190, 90, 0.65);
+
+  animation-delay: 1.4s;
+}
+
+/* =========================================================
+   MAP MARKERS
+   ========================================================= */
+
+.analysis-map-marker {
+  position: absolute;
+
+  padding: 7px 10px;
+
+  border: 1px solid rgba(100, 220, 210, 0.25);
+
+  border-radius: 6px;
+
+  background: rgba(2, 12, 17, 0.82);
+
+  backdrop-filter: blur(8px);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.1em;
+
+  color: rgba(220, 240, 240, 0.75);
+
+  animation: markerFloat 4s ease-in-out infinite;
+}
+
+.marker-vessel {
+  left: 50%;
+  top: 50%;
+
+  color: #55e6c0;
+
+  border-color: rgba(70, 230, 190, 0.45);
+
+  animation-delay: 0.4s;
+}
+
+.marker-west {
+  left: 12%;
+  top: 60%;
+}
+
+.marker-east {
+  right: 8%;
+  top: 28%;
+}
+
+.marker-north {
+  left: 45%;
+  top: 8%;
+}
+
+/* =========================================================
+   MAP CAPTION
+   ========================================================= */
+
+.analysis-map-caption {
+  position: absolute;
+
+  left: 18px;
+  bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.12em;
+
+  color: rgba(190, 220, 220, 0.55);
+}
+
+/* =========================================================
+   TELEMETRY
+   ========================================================= */
+
+.analysis-conditions {
+  padding: 28px;
+
+  opacity: 0;
+  transform: translateX(35px);
+}
+
+.analysis-visible .analysis-conditions {
+  animation: analysisSideIn 0.8s 0.3s
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    forwards;
+}
+
+.condition-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.condition-row > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 9px;
+}
+
+.condition-row span {
+  font-family: "DM Mono", monospace;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em;
+  color: #dceaea !important;
+  opacity: 1 !important;
+}
+
+.condition-row strong {
+  font-size: 1.05rem;
+
+  font-weight: 600;
+
+  color: #edf7f5;
+}
+
+.condition-bar {
+  position: relative;
+
+  width: 100%;
+  height: 5px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: rgba(150, 180, 185, 0.1);
+}
+
+.condition-bar i {
+  display: block;
+
+  position: relative;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #55e0b6;
+
+  box-shadow: 0 0 12px rgba(85, 224, 182, 0.4);
+
+  transition: width 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  overflow: hidden;
+}
+
+.condition-bar i::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -40%;
+
+  width: 35%;
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  animation: telemetryShimmer 2.5s linear infinite;
+}
+
+.wind-bar i {
+  background: #e7bd63;
+}
+
+.visibility-bar i {
+  background: #70d7ed;
+}
+
+.current-bar i {
+  background: #ff786c;
+}
+
+.condition-note {
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(150, 180, 185, 0.16);
+
+  font-size: 0.9rem !important;
+  line-height: 1.65;
+
+  color: #c5d7d7 !important;
+  opacity: 1 !important;
+}
+
+/* =========================================================
+   AI CARD
+   ========================================================= */
+
+.analysis-ai {
+  padding: 28px;
+
+  opacity: 0;
+  transform: translateX(35px);
+}
+
+.analysis-visible .analysis-ai {
+  animation: analysisSideIn 0.8s 0.45s
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    forwards;
+}
+
+.analysis-ai-score {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+.analysis-ai-score strong {
+  font-size: 4.6rem !important;
+
+  line-height: 0.9;
+
+  font-weight: 500;
+
+  letter-spacing: -0.06em;
+
+  color: #f3f8f7;
+}
+
+.analysis-ai-score span {
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.12em;
+
+  color: rgba(190, 215, 215, 0.42);
+}
+
+.analysis-ai-trend {
+  margin: 20px 0 8px !important;
+
+  font-size: 1rem !important;
+
+  font-weight: 600;
+
+  color: #ff786c !important;
+}
+
+.analysis-ai-description {
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  color: #dceaea !important;
+  opacity: 1 !important;
+}
+
+.analysis-ai-signal {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 28px;
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(150, 180, 185, 0.16);
+
+  font-size: 0.88rem !important;
+  line-height: 1.5;
+
+  color: #c8dada !important;
+  opacity: 1 !important;
+}
+
+/* =========================================================
+   RISK ZONES
+   ========================================================= */
+
+.analysis-risks {
+  grid-column: 1 / -1;
+
+  margin-top: 15px;
+
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+.analysis-visible .analysis-risks {
+  animation: analysisCardIn 0.9s 0.55s
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    forwards;
+}
+
+.risk-zone-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.analysis-risk-card {
+  padding: 25px;
+
+  min-height: 280px;
+}
+
+.risk-card-topline {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.risk-card-topline > span {
+  font-family: "DM Mono", monospace;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em;
+  color: #dceaea !important;
+  opacity: 1 !important;
+}
+.high-risk,
+.moderate-risk {
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.66rem;
+
+  letter-spacing: 0.1em;
+}
+
+.high-risk {
+  color: #ff776b;
+}
+
+.moderate-risk {
+  color: #e5bd65;
+}
+
+.risk-card-score {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 8px;
+
+  margin: 28px 0 16px;
+}
+
+.risk-card-score strong {
+  font-size: 3.2rem;
+
+  font-weight: 500;
+
+  letter-spacing: -0.05em;
+
+  color: #f4f8f7;
+}
+
+.risk-card-score span {
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.7rem;
+
+  color: rgba(190, 215, 215, 0.4);
+}
+
+.analysis-risk-card > p {
+  margin: 0 !important;
+
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+
+  color: #d4e3e3 !important;
+  opacity: 1 !important;
+}
+
+.risk-card-action {
+  margin-top: 22px;
+
+  padding-top: 17px;
+
+  border-top: 1px solid rgba(150, 180, 185, 0.1);
+}
+
+.risk-card-action span {
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.63rem;
+
+  letter-spacing: 0.14em;
+
+  color: rgba(190, 215, 215, 0.4);
+}
+
+.risk-card-action p {
+  margin: 7px 0 0 !important;
+
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+
+  color: #dceaea !important;
+  opacity: 1 !important;
+}
+
+/* =========================================================
+   RISK OUTLOOK
+   ========================================================= */
+
+.analysis-trends {
+  grid-column: 1 / -1;
+
+  padding: 28px;
+
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+.analysis-visible .analysis-trends {
+  animation: analysisCardIn 0.9s 0.7s
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    forwards;
+}
+
+.trend-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+}
+
+.trend-item {
+  position: relative;
+
+  padding: 22px;
+
+  border: 1px solid rgba(120, 190, 200, 0.1);
+
+  border-radius: 12px;
+
+  background: rgba(5, 20, 27, 0.7);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.trend-item:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(80, 220, 210, 0.3);
+
+  background: rgba(8, 28, 35, 0.9);
+}
+
+.trend-item > span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.15em;
+
+  color: rgba(190, 215, 215, 0.45);
+}
+
+.trend-item strong {
+  display: block;
+
+  font-size: 2.3rem;
+
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
+
+  color: #f3f8f7;
+}
+
+.trend-item small {
+  display: block;
+
+  margin-top: 5px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.08em;
+
+  color: rgba(190, 215, 215, 0.45);
+}
+
+.active-trend {
+  border-color: rgba(75, 225, 190, 0.3);
+}
+
+.elevated-trend {
+  border-color: rgba(255, 110, 95, 0.3);
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes analysisHeaderIn {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes analysisCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes analysisSideIn {
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mapGridMove {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 48px 48px;
+  }
+}
+
+@keyframes mapScan {
+  from {
+    top: -5px;
+  }
+
+  to {
+    top: 105%;
+  }
+}
+
+@keyframes riskRingPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(255, 100, 90, 0.12);
+  }
+}
+
+@keyframes markerFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes telemetryShimmer {
+  from {
+    left: -40%;
+  }
+
+  to {
+    left: 120%;
+  }
+}
+
+@keyframes liveDot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.65);
+    opacity: 0.55;
+  }
+}
+
+@keyframes liveFeedGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(70, 230, 190, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(70, 230, 190, 0.08);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .analysis-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-map {
+    grid-row: auto;
+  }
+
+  .analysis-risks,
+  .analysis-trends {
+    grid-column: auto;
+  }
+
+  .risk-zone-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trend-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .analysis-page {
+    padding: 60px 20px 90px;
+  }
+
+  .analysis-heading {
+    display: block;
+    margin-bottom: 35px;
+  }
+
+  .analysis-heading h2 {
+    font-size: 3.2rem !important;
+  }
+
+  .analysis-state {
+    display: inline-flex;
+    margin-top: 25px;
+  }
+
+  .analysis-map,
+  .analysis-conditions,
+  .analysis-ai,
+  .analysis-trends {
+    padding: 20px;
+  }
+
+  .analysis-map-stage {
+    min-height: 400px;
+  }
+
+  .analysis-section-heading {
+    display: block;
+  }
+
+  .analysis-coordinate,
+  .analysis-updated {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .trend-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* =========================================================
+   STEP 3 — LIVE OCEAN MAP EFFECTS
+   ========================================================= */
+
+.analysis-map-stage {
+  isolation: isolate;
+}
+
+/* Animated ocean atmosphere */
+.analysis-map-stage::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+
+  background:
+    radial-gradient(
+      circle at 30% 45%,
+      rgba(40, 180, 170, 0.12),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 70% 35%,
+      rgba(50, 130, 190, 0.1),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 50% 75%,
+      rgba(20, 100, 150, 0.1),
+      transparent 30%
+    );
+
+  animation: oceanAtmosphere 9s ease-in-out infinite alternate;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep grid above atmosphere */
+.analysis-map-grid {
+  z-index: 1;
+}
+
+/* Risk rings above grid */
+.analysis-map-ring {
+  z-index: 3;
+}
+
+/* Markers above everything */
+.analysis-map-marker {
+  z-index: 5;
+}
+
+/* =========================================================
+   VESSEL PULSE
+   ========================================================= */
+
+.marker-vessel {
+  animation:
+    markerFloat 4s ease-in-out infinite,
+    vesselGlow 2s ease-in-out infinite;
+}
+
+.marker-vessel::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: #55e6c0;
+
+  transform: translate(-50%, -50%);
+
+  box-shadow:
+    0 0 0 5px rgba(85, 230, 192, 0.12),
+    0 0 20px rgba(85, 230, 192, 0.65);
+
+  z-index: -1;
+
+  animation: vesselPulse 2s ease-out infinite;
+}
+
+/* =========================================================
+   RISK ZONE RADAR EFFECT
+   ========================================================= */
+
+.ring-west::after,
+.ring-east::after,
+.ring-north::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -12px;
+
+  border: 1px solid currentColor;
+
+  border-radius: 50%;
+
+  opacity: 0;
+
+  animation: expandingRiskRing 2.8s ease-out infinite;
+}
+
+.ring-west {
+  color: rgba(255, 110, 95, 0.55);
+}
+
+.ring-east {
+  color: rgba(255, 90, 80, 0.7);
+}
+
+.ring-north {
+  color: rgba(245, 190, 90, 0.6);
+}
+
+.ring-east::after {
+  animation-delay: 0.8s;
+}
+
+.ring-north::after {
+  animation-delay: 1.5s;
+}
+
+/* =========================================================
+   OCEAN FLOW PARTICLES
+   ========================================================= */
+
+.analysis-map-stage .analysis-map-marker::after {
+  content: "";
+
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: rgba(100, 220, 210, 0.7);
+
+  box-shadow:
+    0 0 10px rgba(100, 220, 210, 0.7);
+
+  animation: oceanParticle 3.5s linear infinite;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   MAP ANIMATIONS
+   ========================================================= */
+
+@keyframes oceanAtmosphere {
+  0% {
+    transform: translate(-2%, -1%) scale(1);
+  }
+
+  50% {
+    transform: translate(2%, 2%) scale(1.04);
+  }
+
+  100% {
+    transform: translate(-1%, 3%) scale(1.08);
+  }
+}
+
+@keyframes vesselPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.9;
+  }
+
+  70% {
+    transform: translate(-50%, -50%) scale(3.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(3.5);
+    opacity: 0;
+  }
+}
+
+@keyframes vesselGlow {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.35);
+  }
+}
+
+@keyframes expandingRiskRing {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.65;
+  }
+
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+@keyframes oceanParticle {
+  0% {
+    transform: translate(-10px, 8px);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate(45px, -25px);
+    opacity: 0;
+  }
+}
+/* =========================================================
+   STEP 4 — INTERACTIVE RISK ZONE CARDS
+   ========================================================= */
+
+.analysis-risk-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+/* Animated light sweep */
+.analysis-risk-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.06),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.7s ease;
+
+  pointer-events: none;
+}
+
+/* Bottom intelligence line */
+.analysis-risk-card::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(85, 230, 192, 0.8),
+    transparent
+  );
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 0.4s ease;
+
+  pointer-events: none;
+}
+
+/* Hover state */
+.analysis-risk-card:hover {
+  transform: translateY(-8px) scale(1.015);
+
+  border-color: rgba(85, 230, 192, 0.45);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 48, 52, 0.82),
+      rgba(5, 20, 27, 0.94)
+    );
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(55, 210, 190, 0.08);
+}
+
+.analysis-risk-card:hover::before {
+  left: 150%;
+}
+
+.analysis-risk-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Risk title */
+.analysis-risk-card .risk-card-topline strong {
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.analysis-risk-card:hover .risk-card-topline strong {
+  transform: translateX(4px);
+
+  text-shadow:
+    0 0 12px rgba(255, 110, 95, 0.45);
+}
+
+/* Score emphasis */
+.analysis-risk-card .risk-card-score strong {
+  display: inline-block;
+
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.analysis-risk-card:hover .risk-card-score strong {
+  transform: scale(1.12);
+
+  text-shadow:
+    0 0 16px rgba(255, 255, 255, 0.25);
+}
+
+/* Risk level badge */
+.analysis-risk-card .risk-card-level {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.analysis-risk-card:hover .risk-card-level {
+  transform: scale(1.06);
+
+  box-shadow:
+    0 0 18px rgba(255, 100, 90, 0.15);
+}
+
+/* Description becomes slightly brighter */
+.analysis-risk-card .risk-card-description {
+  transition: color 0.3s ease;
+}
+
+.analysis-risk-card:hover .risk-card-description {
+  color: rgba(230, 245, 244, 0.9);
+}
+
+/* =========================================================
+   RISK CARD SIGNAL INDICATOR
+   ========================================================= */
+
+.analysis-risk-card .risk-card-footer {
+  position: relative;
+}
+
+/* If your card already has a footer, this gives it
+   a live-intelligence treatment. */
+.analysis-risk-card:hover .risk-card-footer {
+  color: #55e6c0;
+}
+
+/* =========================================================
+   HIGH-RISK CARD
+   ========================================================= */
+
+.analysis-risk-card:has(.risk-card-level.high):hover {
+  border-color: rgba(255, 95, 85, 0.55);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.4),
+    0 0 28px rgba(255, 80, 70, 0.1);
+}
+
+/* =========================================================
+   RISK CARD ENTRY ANIMATION
+   ========================================================= */
+
+.analysis-risk-card {
+  animation: riskCardEntry 0.8s ease both;
+}
+
+.analysis-risk-card:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.analysis-risk-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.analysis-risk-card:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+@keyframes riskCardEntry {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .analysis-risk-card:hover {
+    transform: translateY(-4px);
+  }
+}
+/* =========================================================
+   STEP 5 — LIVE TELEMETRY ANIMATION
+   ========================================================= */
+
+.analysis-conditions {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle moving scan across the telemetry panel */
+.analysis-conditions::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -40%;
+
+  width: 35%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(85, 230, 192, 0.035),
+    transparent
+  );
+
+  transform: skewX(-18deg);
+
+  animation: telemetrySweep 7s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CONDITION ROWS
+   ========================================================= */
+
+.condition-row {
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.condition-row:hover {
+  transform: translateX(5px);
+
+  background: rgba(85, 230, 192, 0.035);
+}
+
+/* =========================================================
+   TELEMETRY VALUE
+   ========================================================= */
+
+.condition-value {
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.condition-row:hover .condition-value {
+  color: #7af2d1;
+
+  text-shadow:
+    0 0 12px rgba(85, 230, 192, 0.35);
+}
+
+/* =========================================================
+   TELEMETRY BAR
+   ========================================================= */
+
+.condition-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Moving highlight */
+.condition-bar::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -30%;
+
+  width: 25%;
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.22);
+
+  filter: blur(2px);
+
+  animation: telemetryBarFlow 3.5s linear infinite;
+
+  pointer-events: none;
+}
+
+/* Keep the existing bar fill above the track */
+.condition-bar > span {
+  position: relative;
+  z-index: 1;
+
+  transform-origin: left center;
+
+  animation: telemetryBarPulse 3s ease-in-out infinite;
+}
+
+/* Slightly different timing for each sensor */
+.condition-row:nth-child(1) .condition-bar > span {
+  animation-delay: 0s;
+}
+
+.condition-row:nth-child(2) .condition-bar > span {
+  animation-delay: 0.6s;
+}
+
+.condition-row:nth-child(3) .condition-bar > span {
+  animation-delay: 1.2s;
+}
+
+.condition-row:nth-child(4) .condition-bar > span {
+  animation-delay: 1.8s;
+}
+
+/* =========================================================
+   LIVE DOT
+   ========================================================= */
+
+.analysis-conditions .condition-dot {
+  animation: conditionDotPulse 2s ease-in-out infinite;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes telemetrySweep {
+  0% {
+    left: -40%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+}
+
+@keyframes telemetryBarFlow {
+  0% {
+    left: -30%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.7;
+  }
+
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+}
+
+@keyframes telemetryBarPulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.25);
+  }
+}
+
+@keyframes conditionDotPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(85, 230, 192, 0);
+  }
+
+  50% {
+    transform: scale(1.35);
+    box-shadow: 0 0 12px rgba(85, 230, 192, 0.5);
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .analysis-conditions::after,
+  .condition-bar::after,
+  .condition-bar > span,
+  .analysis-conditions .condition-dot {
+    animation: none;
+  }
+}
+/* =========================================================
+   STEP 6 — AI PREDICTION INTELLIGENCE EFFECTS
+   ========================================================= */
+
+.analysis-ai {
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Moving AI scan */
+.analysis-ai::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -35%;
+
+  width: 30%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(85, 230, 192, 0.055),
+    transparent
+  );
+
+  transform: skewX(-18deg);
+
+  animation: aiScan 6s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+/* Subtle bottom intelligence glow */
+.analysis-ai::after {
+  content: "";
+
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 0;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(85, 230, 192, 0.65),
+    transparent
+  );
+
+  animation: aiLinePulse 2.8s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   AI STATUS / RISK BADGE
+   ========================================================= */
+
+.analysis-ai .analysis-risk-badge {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.analysis-ai:hover .analysis-risk-badge {
+  transform: scale(1.04);
+
+  box-shadow:
+    0 0 20px rgba(85, 230, 192, 0.12);
+}
+
+/* =========================================================
+   AI SCORE
+   ========================================================= */
+
+.analysis-ai .analysis-score,
+.analysis-ai .risk-score {
+  transition:
+    transform 0.35s ease,
+    text-shadow 0.35s ease;
+}
+
+.analysis-ai:hover .analysis-score,
+.analysis-ai:hover .risk-score {
+  transform: scale(1.04);
+
+  text-shadow:
+    0 0 18px rgba(85, 230, 192, 0.25);
+}
+
+/* =========================================================
+   AI TREND
+   ========================================================= */
+
+.analysis-ai .analysis-trend {
+  position: relative;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.analysis-ai:hover .analysis-trend {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   AI SIGNAL
+   ========================================================= */
+
+.analysis-ai .analysis-signal {
+  position: relative;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.analysis-ai:hover .analysis-signal {
+  transform: translateY(-2px);
+
+  background: rgba(85, 230, 192, 0.045);
+}
+
+/* Signal indicator pulse */
+.analysis-ai .analysis-signal::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 6px;
+  height: 6px;
+
+  margin-right: 8px;
+
+  border-radius: 50%;
+
+  background: #55e6c0;
+
+  box-shadow:
+    0 0 8px rgba(85, 230, 192, 0.55);
+
+  animation: aiSignalPulse 1.8s ease-in-out infinite;
+
+  vertical-align: middle;
+}
+
+/* =========================================================
+   AI CARD ENTRY
+   ========================================================= */
+
+.analysis-ai {
+  animation: aiCardEntry 0.9s ease both;
+  animation-delay: 0.25s;
+}
+
+@keyframes aiCardEntry {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   AI ANIMATIONS
+   ========================================================= */
+
+@keyframes aiScan {
+  0% {
+    left: -35%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
+}
+
+@keyframes aiLinePulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scaleX(0.75);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes aiSignalPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: scale(1.45);
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .analysis-ai,
+  .analysis-ai::before,
+  .analysis-ai::after,
+  .analysis-ai .analysis-signal::before {
+    animation: none;
+  }
+}
+/* =========================================================
+   STEP 7 — CINEMATIC OCEAN ANALYSIS REVEAL
+   ========================================================= */
+
+#ocean-analysis {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Initial state before entering viewport */
+#ocean-analysis .analysis-shell {
+  opacity: 0;
+  transform:
+    translateY(90px)
+    scale(0.97);
+
+  filter: blur(8px);
+
+  transition:
+    opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1s ease;
+}
+
+/* Activated by OceanAnalysis.tsx IntersectionObserver */
+#ocean-analysis .analysis-page.analysis-visible .analysis-shell {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  filter: blur(0);
+}
+
+/* =========================================================
+   HEADING REVEAL
+   ========================================================= */
+
+#ocean-analysis .analysis-heading {
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.8s ease 0.15s,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+#ocean-analysis .analysis-page.analysis-visible .analysis-heading {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* Kicker */
+#ocean-analysis .analysis-kicker {
+  opacity: 0;
+
+  transform: translateX(-25px);
+
+  transition:
+    opacity 0.7s ease 0.3s,
+    transform 0.7s ease 0.3s;
+}
+
+#ocean-analysis .analysis-page.analysis-visible .analysis-kicker {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+/* Heading underline glow */
+#ocean-analysis .analysis-heading h2 {
+  position: relative;
+}
+
+#ocean-analysis .analysis-heading h2::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -12px;
+
+  width: 0;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(85, 230, 192, 0.9),
+    transparent
+  );
+
+  transition:
+    width 1s cubic-bezier(0.22, 1, 0.36, 1) 0.55s;
+}
+
+#ocean-analysis
+.analysis-page.analysis-visible
+.analysis-heading
+h2::after {
+  width: 140px;
+}
+
+/* =========================================================
+   MAIN GRID REVEAL
+   ========================================================= */
+
+#ocean-analysis .analysis-layout {
+  opacity: 0;
+
+  transform: translateY(45px);
+
+  transition:
+    opacity 0.9s ease 0.35s,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s;
+}
+
+#ocean-analysis
+.analysis-page.analysis-visible
+.analysis-layout {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+#ocean-analysis .analysis-map {
+  opacity: 0;
+
+  transform:
+    translateX(-35px)
+    scale(0.98);
+
+  transition:
+    opacity 0.9s ease 0.5s,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s;
+}
+
+#ocean-analysis
+.analysis-page.analysis-visible
+.analysis-map {
+  opacity: 1;
+
+  transform:
+    translateX(0)
+    scale(1);
+}
+
+/* =========================================================
+   CONDITIONS
+   ========================================================= */
+
+#ocean-analysis .analysis-conditions {
+  opacity: 0;
+
+  transform: translateX(35px);
+
+  transition:
+    opacity 0.8s ease 0.65s,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.65s;
+}
+
+#ocean-analysis
+.analysis-page.analysis-visible
+.analysis-conditions {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+/* =========================================================
+   AI PANEL
+   ========================================================= */
+
+#ocean-analysis .analysis-ai {
+  opacity: 0;
+
+  transform:
+    translateX(35px)
+    scale(0.98);
+
+  transition:
+    opacity 0.8s ease 0.8s,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.8s;
+}
+
+#ocean-analysis
+.analysis-page.analysis-visible
+.analysis-ai {
+  opacity: 1;
+
+  transform:
+    translateX(0)
+    scale(1);
+}
+
+/* =========================================================
+   RISK SECTION
+   ========================================================= */
+
+#ocean-analysis .analysis-risks {
+  opacity: 0;
+
+  transform: translateY(50px);
+
+  transition:
+    opacity 0.9s ease 0.9s,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.9s;
+}
+
+#ocean-analysis
+.analysis-page.analysis-visible
+.analysis-risks {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* =========================================================
+   TREND SECTION
+   ========================================================= */
+
+#ocean-analysis .analysis-trends {
+  opacity: 0;
+
+  transform: translateY(50px);
+
+  transition:
+    opacity 0.9s ease 1.05s,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.05s;
+}
+
+#ocean-analysis
+.analysis-page.analysis-visible
+.analysis-trends {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  #ocean-analysis .analysis-shell {
+    transform: translateY(50px) scale(0.98);
+  }
+
+  #ocean-analysis .analysis-map,
+  #ocean-analysis .analysis-conditions,
+  #ocean-analysis .analysis-ai {
+    transform: translateY(25px);
+  }
+
+  #ocean-analysis
+  .analysis-page.analysis-visible
+  .analysis-map,
+  #ocean-analysis
+  .analysis-page.analysis-visible
+  .analysis-conditions,
+  #ocean-analysis
+  .analysis-page.analysis-visible
+  .analysis-ai {
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  #ocean-analysis .analysis-shell,
+  #ocean-analysis .analysis-heading,
+  #ocean-analysis .analysis-kicker,
+  #ocean-analysis .analysis-layout,
+  #ocean-analysis .analysis-map,
+  #ocean-analysis .analysis-conditions,
+  #ocean-analysis .analysis-ai,
+  #ocean-analysis .analysis-risks,
+  #ocean-analysis .analysis-trends {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  #ocean-analysis .analysis-heading h2::after {
+    width: 140px;
+    transition: none;
+  }
+}
+/* =========================================================
+   STEP 8 — LIVE OCEAN FLOW PARTICLES
+   ========================================================= */
+
+.analysis-map-stage {
+  position: relative;
+  overflow: hidden;
+}
+
+.ocean-flow-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.flow-particle {
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: rgba(85, 230, 192, 0.7);
+
+  box-shadow:
+    0 0 8px rgba(85, 230, 192, 0.6),
+    0 0 18px rgba(85, 230, 192, 0.2);
+
+  opacity: 0;
+
+  animation:
+    oceanFlowMove 6s linear infinite,
+    oceanFlowGlow 2s ease-in-out infinite;
+}
+
+.particle-1 {
+  left: 8%;
+  top: 62%;
+  animation-delay: 0s;
+}
+
+.particle-2 {
+  left: 18%;
+  top: 35%;
+  animation-delay: 1.1s;
+}
+
+.particle-3 {
+  left: 29%;
+  top: 72%;
+  animation-delay: 2.2s;
+}
+
+.particle-4 {
+  left: 39%;
+  top: 48%;
+  animation-delay: 0.7s;
+}
+
+.particle-5 {
+  left: 51%;
+  top: 66%;
+  animation-delay: 2.8s;
+}
+
+.particle-6 {
+  left: 63%;
+  top: 30%;
+  animation-delay: 1.6s;
+}
+
+.particle-7 {
+  left: 72%;
+  top: 57%;
+  animation-delay: 3.4s;
+}
+
+.particle-8 {
+  left: 81%;
+  top: 42%;
+  animation-delay: 2.1s;
+}
+
+.particle-9 {
+  left: 90%;
+  top: 68%;
+  animation-delay: 4s;
+}
+
+.particle-10 {
+  left: 44%;
+  top: 24%;
+  animation-delay: 4.7s;
+}
+
+.flow-particle::after {
+  content: "";
+
+  position: absolute;
+
+  right: 3px;
+  top: 50%;
+
+  width: 28px;
+  height: 1px;
+
+  transform: translateY(-50%);
+
+  background: linear-gradient(
+    90deg,
+    rgba(85, 230, 192, 0.45),
+    transparent
+  );
+}
+
+@keyframes oceanFlowMove {
+  0% {
+    transform: translate(-25px, 18px);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 0.8;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  82% {
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: translate(100px, -45px);
+    opacity: 0;
+  }
+}
+
+@keyframes oceanFlowGlow {
+  0%,
+  100% {
+    filter: brightness(0.8);
+  }
+
+  50% {
+    filter: brightness(1.5);
+  }
+}
+
+.analysis-map-ring,
+.analysis-map-marker {
+  z-index: 5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-particle {
+    animation: none;
+    opacity: 0.4;
+  }
+}
+/* =========================================================
+   STEP 3 — INTERACTIVE RISK ZONE CARDS
+   ========================================================= */
+
+.analysis-risk-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+/* Moving light sweep */
+.analysis-risk-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.06),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.7s ease;
+
+  pointer-events: none;
+}
+
+/* Bottom intelligence line */
+.analysis-risk-card::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(85, 230, 192, 0.8),
+    transparent
+  );
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 0.4s ease;
+
+  pointer-events: none;
+}
+
+/* Hover */
+.analysis-risk-card:hover {
+  transform: translateY(-8px) scale(1.015);
+
+  border-color: rgba(85, 230, 192, 0.45);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 48, 52, 0.82),
+      rgba(5, 20, 27, 0.94)
+    );
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(55, 210, 190, 0.08);
+}
+
+.analysis-risk-card:hover::before {
+  left: 150%;
+}
+
+.analysis-risk-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Risk title */
+.analysis-risk-card .risk-card-topline strong {
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.analysis-risk-card:hover .risk-card-topline strong {
+  transform: translateX(4px);
+
+  text-shadow:
+    0 0 12px rgba(255, 110, 95, 0.45);
+}
+
+/* Score */
+.analysis-risk-card .risk-card-score strong {
+  display: inline-block;
+
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.analysis-risk-card:hover .risk-card-score strong {
+  transform: scale(1.12);
+
+  text-shadow:
+    0 0 16px rgba(255, 255, 255, 0.25);
+}
+
+/* Recommendation */
+.analysis-risk-card .risk-card-action {
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.analysis-risk-card:hover .risk-card-action {
+  transform: translateX(4px);
+}
+
+/* Card entrance */
+.analysis-risk-card {
+  animation: riskCardEntry 0.8s ease both;
+}
+
+.analysis-risk-card:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.analysis-risk-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.analysis-risk-card:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+@keyframes riskCardEntry {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .analysis-risk-card:hover {
+    transform: translateY(-4px);
+  }
+}
+/* =========================================================
+   STEP 4 — LIVE TELEMETRY ANIMATION
+   ========================================================= */
+
+.analysis-conditions {
+  position: relative;
+  overflow: hidden;
+}
+
+.analysis-conditions::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -30%;
+  height: 35%;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(85, 230, 192, 0.06),
+    transparent
+  );
+  pointer-events: none;
+  animation: telemetryScan 5s linear infinite;
+}
+
+.condition-row {
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.condition-row:hover {
+  transform: translateX(6px);
+}
+
+.condition-row > div:first-child {
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.condition-row:hover > div:first-child {
+  transform: translateX(4px);
+}
+
+.condition-row strong {
+  display: inline-block;
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.condition-row:hover strong {
+  transform: scale(1.08);
+  text-shadow: 0 0 14px rgba(85, 230, 192, 0.3);
+}
+
+/* Telemetry bars */
+
+.condition-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+.condition-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -35%;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: telemetryBarFlow 3.5s linear infinite;
+}
+
+.condition-bar i {
+  position: relative;
+  display: block;
+  transition: width 0.8s ease;
+}
+
+/* Stagger the telemetry rows */
+
+.condition-row:nth-child(1) {
+  animation: telemetryRowEntry 0.7s ease both;
+  animation-delay: 0.1s;
+}
+
+.condition-row:nth-child(2) {
+  animation: telemetryRowEntry 0.7s ease both;
+  animation-delay: 0.2s;
+}
+
+.condition-row:nth-child(3) {
+  animation: telemetryRowEntry 0.7s ease both;
+  animation-delay: 0.3s;
+}
+
+.condition-row:nth-child(4) {
+  animation: telemetryRowEntry 0.7s ease both;
+  animation-delay: 0.4s;
+}
+
+/* Live status dot */
+
+.analysis-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.analysis-updated::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(85, 230, 192, 0.9);
+  box-shadow: 0 0 10px rgba(85, 230, 192, 0.7);
+  animation: telemetryDotPulse 1.8s ease-in-out infinite;
+}
+
+/* Keyframes */
+
+@keyframes telemetryScan {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(380%);
+    opacity: 0;
+  }
+}
+
+@keyframes telemetryBarFlow {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(390%);
+  }
+}
+
+@keyframes telemetryRowEntry {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes telemetryDotPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .analysis-conditions::before,
+  .condition-bar::after,
+  .condition-row,
+  .analysis-updated::before {
+    animation: none;
+  }
+
+  .condition-row {
+    transition: none;
+  }
+}
+/* =========================================================
+   STEP 5 — AI PREDICTION PANEL ANIMATION
+   ========================================================= */
+
+.analysis-ai {
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Moving AI scan effect */
+
+.analysis-ai::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  top: -30%;
+  height: 30%;
+
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(85, 230, 192, 0.08),
+    transparent
+  );
+
+  pointer-events: none;
+
+  animation: aiScan 5s linear infinite;
+}
+
+/* Subtle hover response */
+
+.analysis-ai:hover {
+  transform: translateY(-5px);
+  border-color: rgba(85, 230, 192, 0.4);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.3),
+    0 0 35px rgba(85, 230, 192, 0.08);
+}
+
+/* Risk badge */
+
+.risk-badge {
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.analysis-ai:hover .risk-badge {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 0 16px rgba(255, 110, 95, 0.18);
+}
+
+/* Risk score */
+
+.analysis-ai-score strong {
+  display: inline-block;
+
+  transition:
+    transform 0.35s ease,
+    text-shadow 0.35s ease;
+}
+
+.analysis-ai:hover .analysis-ai-score strong {
+  transform: scale(1.08);
+
+  text-shadow:
+    0 0 22px rgba(85, 230, 192, 0.3);
+}
+
+/* Trend text */
+
+.analysis-ai-trend {
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.analysis-ai:hover .analysis-ai-trend {
+  transform: translateX(5px);
+}
+
+/* Description */
+
+.analysis-ai-description {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.analysis-ai:hover .analysis-ai-description {
+  transform: translateX(3px);
+}
+
+/* Model confidence signal */
+
+.analysis-ai-signal {
+  position: relative;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.analysis-ai:hover .analysis-ai-signal {
+  transform: translateX(4px);
+}
+
+/* Confidence dot */
+
+.analysis-ai-signal .analysis-state-dot {
+  display: inline-block;
+
+  animation: aiSignalPulse 1.8s ease-in-out infinite;
+}
+
+/* Entry animation */
+
+.analysis-ai {
+  animation: aiPanelEntry 0.9s ease both;
+  animation-delay: 0.25s;
+}
+
+/* Keyframes */
+
+@keyframes aiScan {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(420%);
+    opacity: 0;
+  }
+}
+
+@keyframes aiSignalPulse {
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.45;
+    box-shadow: 0 0 4px rgba(85, 230, 192, 0.25);
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+    box-shadow:
+      0 0 8px rgba(85, 230, 192, 0.7),
+      0 0 18px rgba(85, 230, 192, 0.25);
+  }
+}
+
+@keyframes aiPanelEntry {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .analysis-ai,
+  .analysis-ai::before,
+  .analysis-ai-signal .analysis-state-dot {
+    animation: none;
+  }
+
+  .analysis-ai {
+    transition: none;
+  }
+}
+/* =========================================================
+   OCEAN ANALYSIS — LARGER CARD TEXT
+   ========================================================= */
+
+/* Section titles inside cards */
+.analysis-section-heading h3 {
+  font-size: 1.35rem !important;
+  line-height: 1.2;
+}
+
+/* Small category labels */
+.analysis-kicker {
+  font-size: 0.78rem !important;
+  letter-spacing: 0.16em;
+}
+
+/* Card status text */
+.analysis-updated,
+.analysis-coordinate {
+  font-size: 0.78rem !important;
+}
+
+/* -------------------------
+   TELEMETRY
+   ------------------------- */
+
+.condition-row span {
+  font-size: 0.82rem !important;
+  letter-spacing: 0.12em;
+}
+
+.condition-row strong {
+  font-size: 1.55rem !important;
+  line-height: 1.15;
+}
+
+.condition-note {
+  font-size: 0.9rem !important;
+  line-height: 1.6;
+}
+
+/* -------------------------
+   AI ANALYSIS
+   ------------------------- */
+
+.analysis-ai-score strong {
+  font-size: 4rem !important;
+  line-height: 0.95;
+}
+
+.analysis-ai-score span {
+  font-size: 0.82rem !important;
+  letter-spacing: 0.12em;
+}
+
+.analysis-ai-trend {
+  font-size: 1.15rem !important;
+  line-height: 1.45;
+}
+
+.analysis-ai-description {
+  font-size: 1rem !important;
+  line-height: 1.7;
+}
+
+.analysis-ai-signal {
+  font-size: 0.88rem !important;
+  line-height: 1.5;
+}
+
+/* Risk badge */
+.risk-badge {
+  font-size: 0.85rem !important;
+  letter-spacing: 0.1em;
+}
+
+/* -------------------------
+   RISK ZONE CARDS
+   ------------------------- */
+
+.risk-card-topline span {
+  font-size: 0.95rem !important;
+  letter-spacing: 0.08em;
+}
+
+.risk-card-topline strong {
+  font-size: 0.85rem !important;
+}
+
+.risk-card-score strong {
+  font-size: 2.8rem !important;
+  line-height: 1;
+}
+
+.risk-card-score span {
+  font-size: 0.85rem !important;
+}
+
+.analysis-risk-card > p {
+  font-size: 1rem !important;
+  line-height: 1.65;
+}
+
+.risk-card-action span {
+  font-size: 0.72rem !important;
+  letter-spacing: 0.13em;
+}
+
+.risk-card-action p {
+  font-size: 0.95rem !important;
+  line-height: 1.55;
+}
+
+/* -------------------------
+   RISK OUTLOOK
+   ------------------------- */
+
+.trend-item span {
+  font-size: 0.8rem !important;
+  letter-spacing: 0.1em;
+}
+
+.trend-item strong {
+  font-size: 2.3rem !important;
+}
+
+.trend-item small {
+  font-size: 0.82rem !important;
+}
+
+/* -------------------------
+   MAIN ANALYSIS DESCRIPTION
+   ------------------------- */
+
+.analysis-heading h2 {
+  font-size: clamp(2.8rem, 5vw, 4.8rem) !important;
+  line-height: 0.95;
+}
+
+.analysis-heading > div > p:last-child {
+  font-size: 1.05rem !important;
+  line-height: 1.7;
+  max-width: 760px;
+}
+
+/* -------------------------
+   MAP TEXT
+   ------------------------- */
+
+.analysis-map-marker {
+  font-size: 0.75rem !important;
+  letter-spacing: 0.08em;
+}
+
+.analysis-map-caption {
+  font-size: 0.78rem !important;
+  letter-spacing: 0.1em;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .analysis-section-heading h3 {
+    font-size: 1.15rem !important;
+  }
+
+  .condition-row strong {
+    font-size: 1.3rem !important;
+  }
+
+  .analysis-ai-score strong {
+    font-size: 3.2rem !important;
+  }
+
+  .analysis-ai-description,
+  .analysis-risk-card > p {
+    font-size: 0.92rem !important;
+  }
+
+  .risk-card-score strong {
+    font-size: 2.3rem !important;
+  }
+
+  .analysis-heading h2 {
+    font-size: 2.8rem !important;
+  }
+}
+/* =========================================================
+   STEP 6 — CINEMATIC OCEAN ANALYSIS SCROLL REVEAL
+   ========================================================= */
+
+#ocean-analysis .analysis-shell {
+  opacity: 0;
+  transform: translateY(70px) scale(0.97);
+  filter: blur(8px);
+
+  transition:
+    opacity 1s ease,
+    transform 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1s ease;
+}
+
+/* Activate when OceanAnalysis enters the viewport */
+
+#ocean-analysis.analysis-visible .analysis-shell {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Heading arrives first */
+
+#ocean-analysis.analysis-visible .analysis-heading {
+  animation: analysisHeadingReveal 0.9s ease both;
+}
+
+/* Main cards arrive with a slight stagger */
+
+#ocean-analysis.analysis-visible .analysis-map {
+  animation: analysisCardReveal 0.9s ease both;
+  animation-delay: 0.15s;
+}
+
+#ocean-analysis.analysis-visible .analysis-conditions {
+  animation: analysisCardReveal 0.9s ease both;
+  animation-delay: 0.25s;
+}
+
+#ocean-analysis.analysis-visible .analysis-ai {
+  animation: analysisCardReveal 0.9s ease both;
+  animation-delay: 0.35s;
+}
+
+#ocean-analysis.analysis-visible .analysis-risks {
+  animation: analysisCardReveal 0.9s ease both;
+  animation-delay: 0.45s;
+}
+
+#ocean-analysis.analysis-visible .analysis-trends {
+  animation: analysisCardReveal 0.9s ease both;
+  animation-delay: 0.55s;
+}
+
+/* Heading animation */
+
+@keyframes analysisHeadingReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card animation */
+
+@keyframes analysisCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  #ocean-analysis .analysis-shell {
+    transform: translateY(40px);
+    filter: blur(5px);
+  }
+
+  #ocean-analysis.analysis-visible .analysis-shell {
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  #ocean-analysis .analysis-shell {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  #ocean-analysis.analysis-visible .analysis-heading,
+  #ocean-analysis.analysis-visible .analysis-map,
+  #ocean-analysis.analysis-visible .analysis-conditions,
+  #ocean-analysis.analysis-visible .analysis-ai,
+  #ocean-analysis.analysis-visible .analysis-risks,
+  #ocean-analysis.analysis-visible .analysis-trends {
+    animation: none;
+  }
+}
+/* =========================================================
+   OCEAN ANALYSIS — TEXT VISIBILITY FIX
+   ========================================================= */
+
+/* ---------- CARD HEADINGS ---------- */
+
+.analysis-section-heading h3 {
+  color: rgba(245, 250, 250, 0.98) !important;
+  font-size: 1.45rem !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+.analysis-kicker {
+  color: rgba(255, 105, 91, 0.95) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  opacity: 1 !important;
+}
+
+.analysis-updated,
+.analysis-coordinate {
+  color: rgba(205, 220, 220, 0.82) !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+/* ---------- TELEMETRY ---------- */
+
+.condition-row span {
+  color: rgba(205, 220, 220, 0.88) !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  opacity: 1 !important;
+}
+
+.condition-row strong {
+  color: rgba(248, 252, 252, 1) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+.condition-note {
+  color: rgba(190, 205, 205, 0.78) !important;
+  font-size: 0.88rem !important;
+  line-height: 1.6 !important;
+  opacity: 1 !important;
+}
+
+/* ---------- AI ANALYSIS ---------- */
+
+.analysis-ai-score strong {
+  color: rgba(250, 252, 252, 1) !important;
+  font-size: 4.2rem !important;
+  font-weight: 400 !important;
+  opacity: 1 !important;
+}
+
+.analysis-ai-score span {
+  color: rgba(185, 205, 205, 0.82) !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  opacity: 1 !important;
+}
+
+.analysis-ai-trend {
+  color: rgba(255, 105, 91, 0.98) !important;
+  font-size: 1.08rem !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+.analysis-ai-description {
+  color: rgba(220, 232, 232, 0.9) !important;
+  font-size: 0.98rem !important;
+  line-height: 1.65 !important;
+  opacity: 1 !important;
+}
+
+.analysis-ai-signal {
+  color: rgba(195, 215, 215, 0.82) !important;
+  font-size: 0.84rem !important;
+  line-height: 1.5 !important;
+  opacity: 1 !important;
+}
+
+.risk-badge {
+  opacity: 1 !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+}
+
+/* ---------- RISK ZONE SECTION ---------- */
+
+.analysis-risks .analysis-section-heading h3 {
+  color: rgba(245, 250, 250, 0.98) !important;
+}
+
+.analysis-risks .analysis-updated {
+  color: rgba(190, 205, 205, 0.8) !important;
+}
+
+/* ---------- RISK CARDS ---------- */
+
+.risk-card-topline span {
+  color: rgba(215, 228, 228, 0.9) !important;
+  font-size: 0.84rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.09em !important;
+  opacity: 1 !important;
+}
+
+.risk-card-topline strong {
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+.risk-card-score strong {
+  color: rgba(248, 252, 252, 1) !important;
+  font-size: 2.8rem !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+}
+
+.risk-card-score span {
+  color: rgba(185, 205, 205, 0.78) !important;
+  font-size: 0.8rem !important;
+  opacity: 1 !important;
+}
+
+.analysis-risk-card > p {
+  color: rgba(215, 228, 228, 0.88) !important;
+  font-size: 0.96rem !important;
+  line-height: 1.65 !important;
+  opacity: 1 !important;
+}
+
+.risk-card-action span {
+  color: rgba(190, 210, 210, 0.78) !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.13em !important;
+  opacity: 1 !important;
+}
+
+.risk-card-action p {
+  color: rgba(225, 237, 237, 0.92) !important;
+  font-size: 0.94rem !important;
+  line-height: 1.55 !important;
+  opacity: 1 !important;
+}
+
+/* ---------- RISK OUTLOOK ---------- */
+
+.analysis-trends .analysis-section-heading h3 {
+  color: rgba(245, 250, 250, 0.98) !important;
+}
+
+.trend-item span {
+  color: rgba(205, 220, 220, 0.85) !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+.trend-item strong {
+  color: rgba(248, 252, 252, 1) !important;
+  font-size: 2.4rem !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+}
+
+.trend-item small {
+  color: rgba(205, 220, 220, 0.82) !important;
+  font-size: 0.82rem !important;
+  opacity: 1 !important;
+}
+
+/* ---------- MAIN OCEAN ANALYSIS INTRO ---------- */
+
+.analysis-heading h2 {
+  color: rgba(248, 252, 252, 1) !important;
+  opacity: 1 !important;
+}
+
+.analysis-heading > div > p:last-child {
+  color: rgba(215, 228, 228, 0.9) !important;
+  font-size: 1.08rem !important;
+  line-height: 1.7 !important;
+  opacity: 1 !important;
+}
+
+/* ---------- MAP LABELS ---------- */
+
+.analysis-map-marker {
+  color: rgba(225, 240, 240, 0.9) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+.analysis-map-caption {
+  color: rgba(195, 215, 215, 0.82) !important;
+  font-size: 0.76rem !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+  .analysis-section-heading h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .condition-row span {
+    font-size: 0.76rem !important;
+  }
+
+  .condition-row strong {
+    font-size: 1.3rem !important;
+  }
+
+  .analysis-ai-description,
+  .analysis-risk-card > p {
+    font-size: 0.9rem !important;
+  }
+
+  .risk-card-action p {
+    font-size: 0.88rem !important;
+  }
+}
+/* =========================================================
+   FINAL OCEAN ANALYSIS TEXT VISIBILITY FIX
+   ========================================================= */
+
+/* MAIN CARD HEADINGS */
+
+#ocean-analysis .analysis-section-heading h3 {
+  color: #f5ffff !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .analysis-kicker {
+  color: #ff7668 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .analysis-updated,
+#ocean-analysis .analysis-coordinate {
+  color: #cfe0e0 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   LIVE TELEMETRY
+   ========================================================= */
+
+#ocean-analysis .condition-row span {
+  color: #dff5f3 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.10em !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .condition-row strong {
+  color: #ffffff !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .condition-note {
+  color: #c9dddd !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   AI ANALYSIS
+   ========================================================= */
+
+#ocean-analysis .analysis-ai-score strong {
+  color: #ffffff !important;
+  font-size: 52px !important;
+  font-weight: 400 !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .analysis-ai-score span {
+  color: #bfd2d2 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .analysis-ai-trend {
+  color: #ff7165 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .analysis-ai-description {
+  color: #e0eeee !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .analysis-ai-signal {
+  color: #c9dddd !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .risk-badge {
+  color: #ff8a7e !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   RISK ZONE ANALYSIS
+   ========================================================= */
+
+#ocean-analysis .risk-card-topline span {
+  color: #dceeee !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .risk-card-topline strong {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .risk-card-score strong {
+  color: #ffffff !important;
+  font-size: 42px !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .risk-card-score span {
+  color: #c0d2d2 !important;
+  font-size: 12px !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .analysis-risk-card > p {
+  color: #d7e7e7 !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .risk-card-action span {
+  color: #bcd0d0 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .risk-card-action p {
+  color: #e0eeee !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   RISK OUTLOOK
+   ========================================================= */
+
+#ocean-analysis .trend-item span {
+  color: #d1e2e2 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .trend-item strong {
+  color: #ffffff !important;
+  font-size: 38px !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .trend-item small {
+  color: #c8dada !important;
+  font-size: 13px !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   MAP LABELS
+   ========================================================= */
+
+#ocean-analysis .analysis-map-marker {
+  color: #e2f3f1 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+#ocean-analysis .analysis-map-caption {
+  color: #c6dada !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+/* =========================================================
+   OCEAN ANALYSIS — FINAL TYPOGRAPHY
+   ========================================================= */
+
+#ocean-analysis .analysis-heading h2 {
+  font-size: 42px !important;
+  line-height: 1.05 !important;
+}
+
+#ocean-analysis .analysis-section-heading h3 {
+  font-size: 18px !important;
+  line-height: 1.2 !important;
+}
+
+#ocean-analysis .analysis-kicker {
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+}
+
+#ocean-analysis .analysis-state,
+#ocean-analysis .analysis-updated,
+#ocean-analysis .analysis-coordinate {
+  font-size: 10px !important;
+}
+
+#ocean-analysis .condition-row span {
+  font-size: 12px !important;
+}
+
+#ocean-analysis .condition-row strong {
+  font-size: 18px !important;
+}
+
+#ocean-analysis .condition-note {
+  font-size: 13px !important;
+}
+
+#ocean-analysis .analysis-ai-score strong {
+  font-size: 42px !important;
+}
+
+#ocean-analysis .analysis-ai-score span {
+  font-size: 10px !important;
+}
+
+#ocean-analysis .analysis-ai-trend {
+  font-size: 14px !important;
+}
+
+#ocean-analysis .analysis-ai-description {
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+}
+
+#ocean-analysis .analysis-ai-signal {
+  font-size: 11px !important;
+}
+
+#ocean-analysis .risk-card-topline span {
+  font-size: 12px !important;
+}
+
+#ocean-analysis .risk-card-topline strong {
+  font-size: 11px !important;
+}
+
+#ocean-analysis .risk-card-score strong {
+  font-size: 32px !important;
+}
+
+#ocean-analysis .risk-card-score span {
+  font-size: 10px !important;
+}
+
+#ocean-analysis .analysis-risk-card > p {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+#ocean-analysis .risk-card-action > span {
+  font-size: 9px !important;
+}
+
+#ocean-analysis .risk-card-action p {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+
+#ocean-analysis .analysis-map-marker {
+  font-size: 10px !important;
+}
+
+#ocean-analysis .analysis-map-caption {
+  font-size: 10px !important;
+}
+
+#ocean-analysis .trend-item span {
+  font-size: 10px !important;
+}
+
+#ocean-analysis .trend-item strong {
+  font-size: 30px !important;
+}
+
+#ocean-analysis .trend-item small {
+  font-size: 10px !important;
+}
+/* =========================================================
+   DASHBOARD PANEL ALIGNMENT FIX
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  /* LEFT — Ocean Analysis */
+  .left-panel {
+    position: fixed;
+    left: 35px;
+    top: 110px;
+    width: 325px;
+    z-index: 20;
+  }
+
+  /* RIGHT — Maritime Risk */
+  .right-panel {
+    position: fixed;
+    right: 35px;
+    top: 110px;
+    width: 295px;
+    z-index: 20;
+  }
+
+  /* LEFT BOTTOM — AI Activity */
+  .bottom-left {
+    position: fixed;
+    left: 35px;
+    bottom: 35px;
+    z-index: 20;
+  }
+
+  /* RIGHT MIDDLE — Live Ocean Telemetry */
+  .bottom-right {
+    position: fixed;
+    right: 35px;
+    bottom: 145px;
+    z-index: 20;
+  }
+
+  /* Telemetry box */
+  .live-data-panel {
+    width: 295px;
+  }
+
+  /* AI Activity box */
+  .ai-activity-panel {
+    width: 245px;
+  }
+}
