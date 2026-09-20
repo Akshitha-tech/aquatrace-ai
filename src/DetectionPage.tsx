@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import "./DetectionPage.css";
 
 type DetectionMode = "IMAGE" | "SATELLITE";
 type ViewMode = "SPLIT" | "OVERLAY" | "ORIGINAL";
@@ -108,7 +109,9 @@ export default function DetectionPage() {
   const [cameraStream, setCameraStream] = useState<MediaStream | null>(null);
   const [cameraFacingMode, setCameraFacingMode] = useState<"user" | "environment">("environment");
   const [imageDimensions, setImageDimensions] = useState("Awaiting source");
+  const [isVisible, setIsVisible] = useState(false);
 
+  const detectionRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const objectUrlRef = useRef<string | null>(null);
@@ -150,6 +153,25 @@ export default function DetectionPage() {
 
     return () => clearInterval(interval);
   }, [isAnalyzing, processingSteps.length]);
+
+  useEffect(() => {
+    const section = detectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(section);
+        }
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => () => cameraStream?.getTracks().forEach((track) => track.stop()), [cameraStream]);
   useEffect(() => () => {
@@ -257,7 +279,10 @@ export default function DetectionPage() {
   };
 
   return (
-    <div className="detection-page">
+    <div
+      ref={detectionRef}
+      className={`detection-page ${isVisible ? "detection-visible" : ""}`}
+    >
       <main className="detection-main">
 
 
@@ -645,12 +670,16 @@ export default function DetectionPage() {
                       />
 
 
+                      {isAnalyzing && (
+                        <div className="detection-scan-line" aria-hidden="true" />
+                      )}
+
                       {viewMode !== "ORIGINAL" &&
                         analysisComplete && (
 
                           <div className="detection-overlay">
 
-                            {detectionBoxes.map((box) => {
+                            {detectionBoxes.map((box, index) => {
 
                               const isHighlighted =
                                 !selectedCategory ||
@@ -671,6 +700,7 @@ export default function DetectionPage() {
                                     top: `${box.y}%`,
                                     width: `${box.width}%`,
                                     height: `${box.height}%`,
+                                    animationDelay: `${index * 120}ms`,
                                   }}
                                   onClick={() => {
                                     setSelectedCategory(
@@ -679,7 +709,11 @@ export default function DetectionPage() {
                                   }}
                                 >
 
-                                  <span>
+                                  <span
+                                    style={{
+                                      animationDelay: `${index * 160 + 140}ms`,
+                                    }}
+                                  >
                                     {box.label}
                                     {" "}
                                     ({box.confidence}%)

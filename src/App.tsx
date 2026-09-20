@@ -33,6 +33,7 @@ function toPercent(value: number, minimum: number, maximum: number) {
 }
 
 export default function App() {
+  const [activeSection, setActiveSection] = useState("dashboard");
   const [selectedRange, setSelectedRange] =
   useState<TimeRange>("LIVE");
 
@@ -82,6 +83,27 @@ useEffect(() => {
   return () => {
     clearInterval(clock);
   };
+}, []);
+
+useEffect(() => {
+  const sectionIds = ["dashboard", "ocean-analysis", "detection", "tracking", "prediction", "insights"];
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visibleEntry = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
+
+      if (visibleEntry) setActiveSection(visibleEntry.target.id);
+    },
+    { threshold: [0.2, 0.4, 0.6], rootMargin: "-10% 0px -35% 0px" }
+  );
+
+  sectionIds.forEach((id) => {
+    const section = document.getElementById(id);
+    if (section) observer.observe(section);
+  });
+
+  return () => observer.disconnect();
 }, []);
 
 useEffect(() => {
@@ -177,6 +199,7 @@ useEffect(() => {
                     <nav className="top-navigation">
 
             <button
+              className={activeSection === "dashboard" ? "active" : ""}
               onClick={() => {
                 document
                   .getElementById("dashboard")
@@ -189,6 +212,7 @@ useEffect(() => {
             </button>
 
             <button
+              className={activeSection === "ocean-analysis" ? "active" : ""}
               onClick={() => {
                 document
                   .getElementById("ocean-analysis")
@@ -201,20 +225,23 @@ useEffect(() => {
             </button>
 
             <button
-  onClick={() => {
-    document
-      .getElementById("detection")
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-  }}
->
-  DETECTION
-</button>
+              className={activeSection === "detection" ? "active" : ""}
+              onClick={() => {
+                document
+                  .getElementById("detection")
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+              }}
+            >
+              DETECTION
+            </button>
 
             <button
+              className={activeSection === "tracking" ? "active" : ""}
               onClick={() => {
+                setActiveSection("tracking");
                 document
                   .getElementById("tracking")
                   ?.scrollIntoView({
@@ -227,7 +254,9 @@ useEffect(() => {
             </button>
 
             <button
+              className={activeSection === "prediction" ? "active" : ""}
               onClick={() => {
+                setActiveSection("prediction");
                 document
                   .getElementById("prediction")
                   ?.scrollIntoView({
@@ -240,7 +269,9 @@ useEffect(() => {
             </button>
 
             <button
+              className={activeSection === "insights" ? "active" : ""}
               onClick={() => {
+                setActiveSection("insights");
                 document
                   .getElementById("insights")
                   ?.scrollIntoView({
