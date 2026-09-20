@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import OceanScene from "./OceanScene";
 import DetectionPage from "./DetectionPage";
 import OceanAnalysis from "./OceanAnalysis";
+import TrackingPage from "./TrackingPage";
+import PredictionPage from "./PredictionPage";
+import InsightsPage from "./InsightsPage";
 
 import {
   predictionData,
@@ -209,6 +212,45 @@ useEffect(() => {
 >
   DETECTION
 </button>
+
+            <button
+              onClick={() => {
+                document
+                  .getElementById("tracking")
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+              }}
+            >
+              TRACKING
+            </button>
+
+            <button
+              onClick={() => {
+                document
+                  .getElementById("prediction")
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+              }}
+            >
+              PREDICTION
+            </button>
+
+            <button
+              onClick={() => {
+                document
+                  .getElementById("insights")
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+              }}
+            >
+              INSIGHTS
+            </button>
 
           </nav>
           <div className="system-status">
@@ -710,18 +752,6 @@ useEffect(() => {
         </div>
 
 
-        {/* =========================
-            MAP LABEL
-        ========================= */}
-
-        <div className="map-label">
-
-          <span className="pulse" />
-
-          LIVE OCEAN GRID
-
-        </div>
-
 
         {/* =========================
             VESSEL INTELLIGENCE
@@ -987,17 +1017,27 @@ useEffect(() => {
         />
       </section>
       <section id="detection">
-  <DetectionPage
-    onBackToDashboard={() => {
-      document
-        .getElementById("dashboard")
-        ?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-    }}
-  />
+  <DetectionPage />
 </section>
+
+      <section id="tracking">
+        <TrackingPage />
+      </section>
+
+      <section id="prediction">
+        <PredictionPage />
+      </section>
+
+      <section id="insights">
+        <InsightsPage
+          liveTemp={liveTemp}
+          liveWind={liveWind}
+          liveCurrent={liveCurrent}
+          prediction={prediction}
+          predictionData={predictionData}
+          riskZones={riskZones}
+        />
+      </section>
 
       
     </main>

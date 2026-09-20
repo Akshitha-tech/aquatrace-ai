@@ -92,47 +92,26 @@ const presets: DemoPreset[] = [
   },
 ];
 
-type DetectionPageProps = {
-  onBackToDashboard: () => void;
-};
-
-export default function DetectionPage({
-  onBackToDashboard,
-}: DetectionPageProps) {
+export default function DetectionPage() {
   const [mode, setMode] = useState<DetectionMode>("IMAGE");
   const [viewMode, setViewMode] = useState<ViewMode>("SPLIT");
 
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
   const [selectedImage, setSelectedImage] =
     useState<string | null>(null);
-
-  const [selectedFileName, setSelectedFileName] =
-    useState("");
-
-  const [selectedSource, setSelectedSource] =
-    useState("None");
-
-  const [isAnalyzing, setIsAnalyzing] =
-    useState(false);
-
-  const [analysisComplete, setAnalysisComplete] =
-    useState(false);
-
-  const [analysisStep, setAnalysisStep] =
-    useState(0);
-
-  const [selectedCategory, setSelectedCategory] =
-    useState<string | null>(null);
-
-  const [cameraOpen, setCameraOpen] =
-    useState(false);
-
-  const [cameraStream, setCameraStream] =
-    useState<MediaStream | null>(null);
+  const [selectedFileName, setSelectedFileName] = useState("");
+  const [selectedSource, setSelectedSource] = useState("None");
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [analysisComplete, setAnalysisComplete] = useState(false);
+  const [analysisStep, setAnalysisStep] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [cameraOpen, setCameraOpen] = useState(false);
+  const [cameraStream, setCameraStream] = useState<MediaStream | null>(null);
+  const [cameraFacingMode, setCameraFacingMode] = useState<"user" | "environment">("environment");
+  const [imageDimensions, setImageDimensions] = useState("Awaiting source");
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const objectUrlRef = useRef<string | null>(null);
 
   const processingSteps = [
     "INITIALIZING VISION ENGINE",
@@ -146,202 +125,122 @@ export default function DetectionPage({
   ];
 
   const categories = [
-    {
-      name: "Plastic Bottles",
-      count: 7,
-      percentage: 41,
-    },
-    {
-      name: "Plastic Fragments",
-      count: 6,
-      percentage: 35,
-    },
-    {
-      name: "Fishing-related Debris",
-      count: 3,
-      percentage: 18,
-    },
-    {
-      name: "Other",
-      count: 1,
-      percentage: 6,
-    },
+    { name: "Plastic Bottles", count: 7, percentage: 41 },
+    { name: "Plastic Fragments", count: 6, percentage: 35 },
+    { name: "Fishing-related Debris", count: 3, percentage: 18 },
+    { name: "Other", count: 1, percentage: 6 },
   ];
 
   useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      if (event.clientX <= 18) {
-        setSidebarOpen(true);
-      }
-
-      if (event.clientX > 280) {
-        setSidebarOpen(false);
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener(
-        "mousemove",
-        handleMouseMove
-      );
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isAnalyzing) {
-      return;
-    }
-
-    setAnalysisStep(0);
+    if (!isAnalyzing) return;
 
     const interval = setInterval(() => {
       setAnalysisStep((current) => {
         if (current >= processingSteps.length - 1) {
           clearInterval(interval);
-
           setTimeout(() => {
             setIsAnalyzing(false);
             setAnalysisComplete(true);
           }, 700);
-
           return current;
         }
-
         return current + 1;
       });
     }, 550);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [isAnalyzing]);
+    return () => clearInterval(interval);
+  }, [isAnalyzing, processingSteps.length]);
 
+  useEffect(() => () => cameraStream?.getTracks().forEach((track) => track.stop()), [cameraStream]);
+  useEffect(() => () => {
+    if (objectUrlRef.current) URL.revokeObjectURL(objectUrlRef.current);
+  }, []);
   useEffect(() => {
-    return () => {
-      if (cameraStream) {
-        cameraStream.getTracks().forEach((track) => {
-          track.stop();
-        });
-      }
-    };
+    if (cameraStream && videoRef.current) videoRef.current.srcObject = cameraStream;
   }, [cameraStream]);
 
-  useEffect(() => {
-    if (cameraStream && videoRef.current) {
-      videoRef.current.srcObject = cameraStream;
-    }
-  }, [cameraStream]);
-
-  const handleFileChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-
-    if (!file) {
-      return;
-    }
-
+    if (!file) return;
     const imageUrl = URL.createObjectURL(file);
-
+    if (objectUrlRef.current) URL.revokeObjectURL(objectUrlRef.current);
+    objectUrlRef.current = imageUrl;
     setSelectedImage(imageUrl);
     setSelectedFileName(file.name);
     setSelectedSource("File Upload");
+    setImageDimensions("Reading dimensions...");
     setAnalysisComplete(false);
     setSelectedCategory(null);
   };
 
-  const openFilePicker = () => {
-    fileInputRef.current?.click();
-  };
+  const openFilePicker = () => fileInputRef.current?.click();
 
   const openCamera = async () => {
     try {
-      const stream =
-        await navigator.mediaDevices.getUserMedia({
-          video: true,
-          audio: false,
-        });
-
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: cameraFacingMode },
+        audio: false,
+      });
       setCameraStream(stream);
       setCameraOpen(true);
     } catch (error) {
       console.error("Camera access failed:", error);
+      alert("Camera access was not available. Please allow camera permission in your browser.");
+    }
+  };
 
-      alert(
-        "Camera access was not available. Please allow camera permission in your browser."
-      );
+  const flipCamera = async () => {
+    const nextFacingMode = cameraFacingMode === "environment" ? "user" : "environment";
+    cameraStream?.getTracks().forEach((track) => track.stop());
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: nextFacingMode },
+        audio: false,
+      });
+      setCameraFacingMode(nextFacingMode);
+      setCameraStream(stream);
+    } catch {
+      alert("The alternate camera is not available on this device.");
     }
   };
 
   const closeCamera = () => {
-    if (cameraStream) {
-      cameraStream.getTracks().forEach((track) => {
-        track.stop();
-      });
-    }
-
+    cameraStream?.getTracks().forEach((track) => track.stop());
     setCameraStream(null);
     setCameraOpen(false);
   };
 
   const captureCameraImage = () => {
     const video = videoRef.current;
-
-    if (!video) {
-      return;
-    }
-
+    if (!video) return;
     const canvas = document.createElement("canvas");
-
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
-
     const context = canvas.getContext("2d");
-
-    if (!context) {
-      return;
-    }
-
-    context.drawImage(
-      video,
-      0,
-      0,
-      canvas.width,
-      canvas.height
-    );
-
-    const imageUrl = canvas.toDataURL("image/jpeg", 0.9);
-
-    setSelectedImage(imageUrl);
+    if (!context) return;
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    setSelectedImage(canvas.toDataURL("image/jpeg", 0.9));
     setSelectedFileName("camera_capture.jpg");
     setSelectedSource("Camera Capture");
+    setImageDimensions(`${canvas.width} × ${canvas.height}`);
     setAnalysisComplete(false);
-
     closeCamera();
   };
 
-  const usePreset = (preset: DemoPreset) => {
+  const selectPreset = (preset: DemoPreset) => {
     setSelectedImage(preset.image);
-    setSelectedFileName(
-      preset.title
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "_") + ".jpg"
-    );
-
+    setSelectedFileName(`${preset.title.toLowerCase().replace(/[^a-z0-9]+/g, "_")}.jpg`);
     setSelectedSource("Hackathon Demo");
+    setImageDimensions("Demo observation");
     setAnalysisComplete(false);
     setSelectedCategory(null);
   };
 
   const startAnalysis = () => {
-    if (!selectedImage) {
-      return;
-    }
-
+    if (!selectedImage) return;
     setIsAnalyzing(true);
     setAnalysisComplete(false);
+    setAnalysisStep(0);
     setSelectedCategory(null);
   };
 
@@ -349,162 +248,16 @@ export default function DetectionPage({
     setSelectedImage(null);
     setSelectedFileName("");
     setSelectedSource("None");
+    setImageDimensions("Awaiting source");
     setIsAnalyzing(false);
     setAnalysisComplete(false);
     setAnalysisStep(0);
     setSelectedCategory(null);
-
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
-    }
+    if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
   return (
     <div className="detection-page">
-
-      {/* =========================================
-          EDGE TRIGGER
-      ========================================= */}
-
-      <div className="detection-edge-trigger" />
-
-
-      {/* =========================================
-          AUTO HIDDEN SIDEBAR
-      ========================================= */}
-
-      <aside
-        className={`detection-sidebar ${
-          sidebarOpen ? "sidebar-open" : ""
-        }`}
-      >
-
-        <div className="detection-sidebar-brand">
-
-          <div className="detection-brand-icon">
-            AT
-          </div>
-
-          <div>
-            <strong>
-              AquaTrace AI
-            </strong>
-
-            <span>
-              MARINE PLASTIC INTELLIGENCE
-            </span>
-          </div>
-
-        </div>
-
-
-        <button className="demo-launch-button">
-          <span className="demo-play">
-            ▶
-          </span>
-
-          <span>
-            <strong>
-              Run AquaTrace Demo
-            </strong>
-
-            <small>
-              8-Step Guided Tour
-            </small>
-          </span>
-
-          <i />
-        </button>
-
-
-        <div className="sidebar-section-label">
-          OPERATIONS
-        </div>
-
-
-        <nav className="detection-nav">
-
-          <button
-            onClick={() => {
-              document
-                .getElementById("dashboard")
-                ?.scrollIntoView({
-                  behavior: "smooth",
-                });
-            }}
-          >
-            <span>◎</span>
-            Dashboard
-          </button>
-
-          <button className="active">
-            <span>◉</span>
-            Detection
-            <em>●</em>
-          </button>
-
-          <button>
-            <span>⌁</span>
-            Tracking
-          </button>
-
-          <button>
-            <span>◌</span>
-            Prediction
-          </button>
-
-          <button>
-            <span>▥</span>
-            Insights
-          </button>
-
-        </nav>
-
-
-        <div className="sidebar-section-label">
-          PLATFORM INTEL
-        </div>
-
-
-        <nav className="detection-nav secondary">
-
-          <button>
-            <span>?</span>
-            How AquaTrace AI Works
-          </button>
-
-          <button>
-            <span>≋</span>
-            Environmental Data Inputs
-          </button>
-
-        </nav>
-
-
-        <div className="sidebar-system-status">
-
-          <span>
-            HYDRODYNAMIC CORE
-          </span>
-
-          <strong>
-            v2.4
-          </strong>
-
-          <div>
-            <i />
-            READY
-          </div>
-
-        </div>
-
-      </aside>
-
-
-      {/* =========================================
-          MAIN CONTENT
-      ========================================= */}
-
       <main className="detection-main">
 
 
@@ -708,7 +461,7 @@ export default function DetectionPage({
                       key={preset.title}
                       className="preset-card"
                       onClick={() => {
-                        usePreset(preset);
+                        selectPreset(preset);
                       }}
                     >
 
@@ -885,6 +638,10 @@ export default function DetectionPage({
                       <img
                         src={selectedImage}
                         alt="Marine observation"
+                        onLoad={(event) => {
+                          const image = event.currentTarget;
+                          setImageDimensions(`${image.naturalWidth} × ${image.naturalHeight}`);
+                        }}
                       />
 
 
@@ -1036,7 +793,7 @@ export default function DetectionPage({
                     </span>
 
                     <strong>
-                      1920 × 1080
+                      {imageDimensions}
                     </strong>
                   </div>
 
@@ -1568,7 +1325,7 @@ export default function DetectionPage({
 
             <div className="camera-controls">
 
-              <button>
+              <button onClick={flipCamera}>
                 FLIP CAMERA
               </button>
 
