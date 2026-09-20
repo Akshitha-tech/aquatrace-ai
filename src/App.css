@@ -4128,6 +4128,18 @@ canvas {
   animation: dashboardPanelIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* Dashboard cards belong to the dashboard section, not later pages. */
+.dashboard-section .left-panel,
+.dashboard-section .right-panel,
+.dashboard-section .live-data-panel,
+.dashboard-section .ai-activity-panel,
+.dashboard-section .bottom-left,
+.dashboard-section .bottom-right,
+.dashboard-section .time-controls,
+.dashboard-section .map-label {
+  position: absolute;
+}
+
 .dashboard-ready .topbar {
   animation-delay: 0.05s;
 }

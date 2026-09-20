@@ -254,7 +254,7 @@ useEffect(() => {
             </button>
 
             <button
-              className={activeSection === "prediction" ? "active" : ""}
+              className={`nav-prediction ${activeSection === "prediction" ? "active" : ""}`}
               onClick={() => {
                 setActiveSection("prediction");
                 document
@@ -269,7 +269,7 @@ useEffect(() => {
             </button>
 
             <button
-              className={activeSection === "insights" ? "active" : ""}
+              className={`nav-insights ${activeSection === "insights" ? "active" : ""}`}
               onClick={() => {
                 setActiveSection("insights");
                 document

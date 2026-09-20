@@ -18,13 +18,17 @@
 .tracking-page {
   position: relative;
   min-height: 100vh;
-  padding: 126px 5vw 110px;
+  padding: 32px 5vw 110px;
   overflow: hidden;
   color: var(--tracking-white);
   background:
     radial-gradient(circle at 72% 5%, rgba(12, 112, 132, 0.13), transparent 28%),
     linear-gradient(180deg, #020b14, #03101a 62%, #020b14);
   opacity: 0;
+}
+
+#tracking {
+  scroll-margin-top: 118px;
 }
 
 .tracking-visible.tracking-page {
@@ -526,7 +530,7 @@
 }
 
 @media (max-width: 680px) {
-  .tracking-page { padding: 112px 16px 70px; }.tracking-header { display: block; }.tracking-header h2 { font-size: 3rem; }.tracking-live-state { margin-top: 20px; }.tracking-filter-bar { display: grid; gap: 12px; }.tracking-filter-bar > div { flex-wrap: wrap; }.tracking-workspace,.tracking-telemetry-column,.tracking-bottom-grid { grid-template-columns: 1fr; }.tracking-map-heading { display: block; }.tracking-coordinate { display: block; margin-top: 12px; }.tracking-map-stage,.tracking-map { min-height: 430px; }.tracking-map { width: 100%; }.tracking-legend { right: 12px; bottom: 40px; min-width: 142px; }.tracking-map-caption { right: 12px; left: 12px; font-size: 0.48rem; }.tracking-timeline-heading { display: block; }.tracking-timeline-heading > span { display: block; margin-top: 12px; }.tracking-timeline-rail { display: grid; gap: 0; margin: 28px 0; border-top: 0; border-left: 1px solid rgba(120, 190, 200, 0.22); }.timeline-node { grid-template-columns: 18px 1fr; justify-items: start; align-items: center; min-height: 42px; margin: 0 0 0 -7px; gap: 10px; }.tracking-timeline-data { grid-template-columns: repeat(2, 1fr); }.tracking-timeline-data strong { font-size: 0.66rem; }.tracking-panel { padding: 18px; }
+  .tracking-page { padding: 24px 16px 70px; }.tracking-header { display: block; }.tracking-header h2 { font-size: 3rem; }.tracking-live-state { margin-top: 20px; }.tracking-filter-bar { display: grid; gap: 12px; }.tracking-filter-bar > div { flex-wrap: wrap; }.tracking-workspace,.tracking-telemetry-column,.tracking-bottom-grid { grid-template-columns: 1fr; }.tracking-map-heading { display: block; }.tracking-coordinate { display: block; margin-top: 12px; }.tracking-map-stage,.tracking-map { min-height: 430px; }.tracking-map { width: 100%; }.tracking-legend { right: 12px; bottom: 40px; min-width: 142px; }.tracking-map-caption { right: 12px; left: 12px; font-size: 0.48rem; }.tracking-timeline-heading { display: block; }.tracking-timeline-heading > span { display: block; margin-top: 12px; }.tracking-timeline-rail { display: grid; gap: 0; margin: 28px 0; border-top: 0; border-left: 1px solid rgba(120, 190, 200, 0.22); }.timeline-node { grid-template-columns: 18px 1fr; justify-items: start; align-items: center; min-height: 42px; margin: 0 0 0 -7px; gap: 10px; }.tracking-timeline-data { grid-template-columns: repeat(2, 1fr); }.tracking-timeline-data strong { font-size: 0.66rem; }.tracking-panel { padding: 18px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

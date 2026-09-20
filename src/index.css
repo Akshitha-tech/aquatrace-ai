@@ -3110,7 +3110,7 @@ body {
 .top-navigation {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 2px;
   margin-left: auto;
   margin-right: 22px;
 }
@@ -3129,6 +3129,14 @@ body {
     color 0.2s ease,
     background 0.2s ease,
     border-color 0.2s ease;
+}
+
+.top-navigation .nav-prediction {
+  padding-right: 6px;
+}
+
+.top-navigation .nav-insights {
+  padding-left: 6px;
 }
 
 .top-navigation button:hover {
